@@ -30,8 +30,8 @@ public class homeController {
 */
     @RequestMapping("/")
     public String Home() throws UnirestException {
-        RecipeMapper a = new RecipeMapper();
-        a.getResultsTitle("burger");
+        //RecipeMapper a = new RecipeMapper();
+        //a.getResultsTitle("burger");
         return "home";
     }
 
