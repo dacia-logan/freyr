@@ -4,10 +4,12 @@ import is.hi.hbv501g.freyr.Freyr.Entities.Recipe;
 import is.hi.hbv501g.freyr.Freyr.Entities.User;
 import is.hi.hbv501g.freyr.Freyr.Repositories.UserRepository;
 import is.hi.hbv501g.freyr.Freyr.Services.UserService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Optional;
+import java.util.List;
 
+@Service
 public class UserServiceImplementation implements UserService {
 
     UserRepository userRepo;
@@ -28,8 +30,8 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public Optional<User> findById(long id) {
-        return userRepo.findById(id);
+    public User findById(long id) {
+        return userRepo.findById(id).orElse(null);
     }
 
     @Override
@@ -42,5 +44,10 @@ public class UserServiceImplementation implements UserService {
     public ArrayList<Recipe> getFavorites(String title) {
         // todo útfæra þetta
         return null;
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userRepo.findAll();
     }
 }

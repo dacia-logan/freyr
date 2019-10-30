@@ -1,20 +1,21 @@
 package is.hi.hbv501g.freyr.Freyr.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 
 @Entity
+@Table(name = "USER")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String userName;
     private String email;
     private String password;
-    private ArrayList<Recipe> favorite;
+
+    //@OneToMany(mappedBy = "user")
+    private ArrayList<Recipe> favorite = new ArrayList<>();
 
     public User(long id, String userName, String email, String password, ArrayList<Recipe> favorite) {
         this.id = id;
@@ -30,6 +31,8 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
+    public User() {}
 
     public long getId() {
         return id;
