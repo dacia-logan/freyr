@@ -1,7 +1,9 @@
 package is.hi.hbv501g.freyr.Freyr.Controllers;
 
 import is.hi.hbv501g.freyr.Freyr.Entities.User;
+import is.hi.hbv501g.freyr.Freyr.Services.RecipeService;
 import is.hi.hbv501g.freyr.Freyr.Services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,7 +16,14 @@ import java.util.Optional;
 @Controller
 public class userController {
 
-    UserService userService;
+    private UserService userService;
+    private RecipeService recipeService;
+
+    @Autowired
+    public userController(UserService userService) {
+        this.userService = userService;
+        this.recipeService = new RecipeService();
+    }
 
     @RequestMapping("signup")
     public String SignUp() { return "signup";}
@@ -35,13 +44,12 @@ public class userController {
         if(result.hasErrors()){
             return "signup";
         }
+        System.out.println(user.getUserName());
         User exists = userService.findById(user.getId());
         if(exists == null){
             userService.save(user);
-            System.out.println(user.getUserName());
-            System.out.println(user.getPassword());
         }
-        model.addAttribute("users", userService.findAll());
+        model.addAttribute("recipes", recipeService.findAll());
         return "home";
     }
 

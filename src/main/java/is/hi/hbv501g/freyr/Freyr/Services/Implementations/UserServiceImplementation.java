@@ -4,6 +4,7 @@ import is.hi.hbv501g.freyr.Freyr.Entities.Recipe;
 import is.hi.hbv501g.freyr.Freyr.Entities.User;
 import is.hi.hbv501g.freyr.Freyr.Repositories.UserRepository;
 import is.hi.hbv501g.freyr.Freyr.Services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,6 +14,11 @@ import java.util.List;
 public class UserServiceImplementation implements UserService {
 
     UserRepository userRepo;
+
+    @Autowired
+    public UserServiceImplementation(UserRepository userRepo) {
+        this.userRepo = userRepo;
+    }
 
     @Override
     public User save(User user) {
