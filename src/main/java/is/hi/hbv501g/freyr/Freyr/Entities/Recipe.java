@@ -11,12 +11,12 @@ public class Recipe {
     // hér koma allar tilviksbreytur t.d
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
+    private int id;
     private String title;
-    private String description;
-    private Double rating;
+    private int readyInMinutes;
     private int servings;
+    private String image;
+    private String description;
 
     // ------------------- Constructor ----------------------------
 
@@ -29,11 +29,12 @@ public class Recipe {
 
     // ------------------- Getters & Setters ----------------------
 
+
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -45,6 +46,22 @@ public class Recipe {
         this.title = title;
     }
 
+    public void setServings(int servings){
+        this.servings=servings;
+    }
+
+    public int getServings(){
+        return servings;
+    }
+
+    public int getReadyInMinutes() {
+        return readyInMinutes;
+    }
+
+    public void setReadyInMinutes(int readyInMinutes) {
+        this.readyInMinutes = readyInMinutes;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -53,19 +70,18 @@ public class Recipe {
         this.description = description;
     }
 
-    public Double getRating() {
-        return rating;
+    public String getImage() {
+        return image;
     }
 
-    public void setRating(Double rating) {
-        this.rating = rating;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public void setServings(int servings){
-        this.servings=servings;
-    }
 
-    public int getServings(){
-        return servings;
+    @Override
+    public String toString(){
+        String s = this.id+" "+this.title;
+        return s;
     }
 }
