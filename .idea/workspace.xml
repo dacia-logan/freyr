@@ -27,6 +27,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
@@ -63,6 +64,7 @@
       <workItem from="1570660516239" duration="8422000" />
       <workItem from="1570920574962" duration="2488000" />
       <workItem from="1572366735932" duration="6675000" />
+      <workItem from="1572481429813" duration="423000" />
     </task>
     <servers />
   </component>

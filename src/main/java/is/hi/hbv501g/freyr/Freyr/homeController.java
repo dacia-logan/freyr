@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 @Controller
 public class homeController {
@@ -31,6 +32,9 @@ public class homeController {
     @RequestMapping("/")
     public String Home() throws UnirestException {
         RecipeMapper a = new RecipeMapper();
+        ArrayList<String> s = new ArrayList<>();
+        s.add("egg");
+        s.add("milk");
         a.getResultsTitle("burger");
         return "home";
     }
