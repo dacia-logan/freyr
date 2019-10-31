@@ -25,14 +25,16 @@ public class userController {
         this.recipeService = new RecipeService();
     }
 
-    @RequestMapping("signup")
-    public String SignUp() { return "signup";}
+    // USER PAGE FUNCTIONS
 
-    @RequestMapping("user")
-    public String User() { return "user";}
+    @RequestMapping("/user")
+    public String User(Model model) {
+        model.addAttribute("users", userService.findAll());
+        return "user";
+    }
 
 
-    // SIGNUP FUNCTIONS
+    // SIGNUP PAGE FUNCTIONS
 
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String signUpGET(User user){
@@ -44,7 +46,6 @@ public class userController {
         if(result.hasErrors()){
             return "signup";
         }
-        System.out.println(user.getUserName());
         User exists = userService.findById(user.getId());
         if(exists == null){
             userService.save(user);
@@ -53,5 +54,5 @@ public class userController {
         return "home";
     }
 
-    // LOGIN FUNCTIONS
+    // LOGIN PAGE FUNCTIONS
 }
