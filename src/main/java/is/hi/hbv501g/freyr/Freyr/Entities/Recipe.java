@@ -11,31 +11,23 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String title;
     private String instructions;
     private double rating;
-    // private Image image; // todo finna út hvernig við geymum mynd
-    private String readyInMin;
+    private String image;
+    private int readyInMinutes;
+    private int servings;
     private int ingredientsHit;
     private int ingredientsMiss;
     //private ArrayList<Recipe> favorite; // todo er þetta nokkuð rétt? - held að þetta eigi ekki heima hér, vitlaust í Diagraminu okkar?
 
 
-    // notum fyrir fyrsta kall smiðinn
-
     public Recipe(String title) {
         this.title = title;
     }
 
-    // notum fyrir seinni köll til að bæta við hlutinn getters og setters
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public Recipe(){}
 
     public long getId() {
         return id;
@@ -43,6 +35,14 @@ public class Recipe {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getInstructions() {
@@ -61,12 +61,28 @@ public class Recipe {
         this.rating = rating;
     }
 
-    public String getReadyInMin() {
-        return readyInMin;
+    public String getImage() {
+        return image;
     }
 
-    public void setReadyInMin(String readyInMin) {
-        this.readyInMin = readyInMin;
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public int getReadyInMinutes() {
+        return readyInMinutes;
+    }
+
+    public void setReadyInMinutes(int readyInMinutes) {
+        this.readyInMinutes = readyInMinutes;
+    }
+
+    public int getServings() {
+        return servings;
+    }
+
+    public void setServings(int servings) {
+        this.servings = servings;
     }
 
     public int getIngredientsHit() {
@@ -83,5 +99,11 @@ public class Recipe {
 
     public void setIngredientsMiss(int ingredientsMiss) {
         this.ingredientsMiss = ingredientsMiss;
+    }
+
+    @Override
+    public String toString(){
+        String s = this.id+" "+this.title;
+        return s;
     }
 }
