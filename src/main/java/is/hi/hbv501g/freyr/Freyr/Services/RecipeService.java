@@ -1,17 +1,13 @@
 package is.hi.hbv501g.freyr.Freyr.Services;
 
-import com.mashape.unirest.http.exceptions.UnirestException;
 import is.hi.hbv501g.freyr.Freyr.Entities.Recipe;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
+public class RecipeService {
+    // todo setja upp allar aðferðir
+    // todo ætti þetta nokkuð að vera interface?
 
-@Service
-public interface RecipeService {
-    Recipe save(Recipe recipe);
-    List<Recipe> findAll();
-    List<Recipe> findByTitle(String title);
-    /*
-    Hér geta svo komið flóknari föll og queries
-     */
+    public Recipe findAll() {
+        // todo útfæra rétt skilar annaðhvort null eða lista af recipes
+        return null;
+    }
 }
