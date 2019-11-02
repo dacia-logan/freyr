@@ -8,28 +8,25 @@ import java.util.ArrayList;
 
 @Entity
 public class Recipe {
-
-    // hér koma allar tilviksbreytur t.d
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
+    private String instructions;
+    private double rating;
+    private String image;
     private int readyInMinutes;
     private int servings;
-    private String image;
-    private String instructions;
     private ArrayList<String> ingredients = new ArrayList<String>();
+    private ArrayList<Recipe> favorite;
+
     // ------------------- Constructor ----------------------------
 
     public Recipe() {
     }
 
-    public Recipe(String title, String instructions, Double rating) {
-
+    public Recipe(String title, int id, String image) {
     }
-
-    // ------------------- Getters & Setters ----------------------
-
 
     public int getId() {
         return id;
@@ -47,12 +44,21 @@ public class Recipe {
         this.title = title;
     }
 
-    public void setServings(int servings){
-        this.servings=servings;
+
+    public double getRating() {
+        return rating;
     }
 
-    public int getServings(){
-        return servings;
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public int getReadyInMinutes() {
@@ -71,21 +77,32 @@ public class Recipe {
         this.instructions = instructions;
     }
 
-    public String getImage() {
-        return image;
+    public int getServings() {
+        return servings;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setServings(int servings) {
+        this.servings = servings;
+
     }
 
-    public void setIngredients(String ingredient){
-        this.ingredients.add(ingredient);
+
+   /* public int getIngredientsMiss() {
+        return ingredientsMiss;
+    }
+
+    public void setIngredientsMiss(int ingredientsMiss) {
+        this.ingredientsMiss = ingredientsMiss;
+
+    }*/
+    public void setIngredients(String ingredients) {
+        this.ingredients.add(ingredients);
     }
 
     public ArrayList<String> getIngredients(){
         return this.ingredients;
     }
+
     @Override
     public String toString(){
         String s = "ID: "+this.id+"  Title: "+this.title+"  Image: "+this.image;

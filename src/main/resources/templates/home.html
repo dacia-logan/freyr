@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Freyr</title>
 </head>
 <body>
 <h1>Freyr</h1>
+    <p><a href="/signup">SignUp</a></p>
+    <p><a href="/login">Login</a></p>
+    <p><a href="/user">User</a></p>
+
+<div th:switch="${recipes}">
+    <h2 th:case="null">No recipes yet!</h2>
+    <div th:case="*">
+        <h2>Recipes</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Rating</th>
+            </tr>
+            </thead>
+            <!-- <tbody>
+            <tr th:each="movie : ${movies}">
+                <td th:text="${movie.title}"></td>
+                <td th:text="${movie.description}"></td>
+                <td th:text="${movie.rating}"></td>
+            </tr>
+            </tbody> -->
+        </table>
+    </div>
+
+</div>
+
 </body>
 </html>
