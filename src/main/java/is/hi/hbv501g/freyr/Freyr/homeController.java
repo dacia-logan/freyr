@@ -3,6 +3,7 @@ package is.hi.hbv501g.freyr.Freyr;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import is.hi.hbv501g.freyr.Freyr.Entities.Recipe;
 import is.hi.hbv501g.freyr.Freyr.Services.Implementations.RecipeServiceImplementation;
 import is.hi.hbv501g.freyr.Freyr.Services.RecipeService;
 import is.hi.hbv501g.freyr.Freyr.Utilities.RecipeMapper;
@@ -35,6 +36,8 @@ public class homeController {
         ArrayList<String> s = new ArrayList<>();
         s.add("egg");
         s.add("milk");
+        Recipe rec = new Recipe();
+        rec.setId(156992);
         a.getResultsTitle("burger");
         return "home";
     }

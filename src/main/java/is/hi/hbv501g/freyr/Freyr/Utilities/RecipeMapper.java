@@ -11,10 +11,16 @@ import org.json.JSONObject;
 
 
 public class RecipeMapper {
-    // main course, side dish, dessert, appetizer, salad, bread, breakfast, soup,
+
     private String baseUri = "https://spoonacular.com/recipeImages/";
+    private String ingrURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=";
+    private String titleURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=25&offset=0&type=main%20course&query=";
+    private String infoURL[] = {"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/", "/information"};
+
+    // Fa lista af uppskriftum eftir hráefnum
     public ArrayList<Recipe> getResultsIngr(ArrayList<String> ingr) throws UnirestException {
         String ingredients = "";
+        // Útbúa streng sem bætist við ingrURL
         if(ingr.size()==1){
             ingredients = ingr.get(0);
         }
@@ -28,45 +34,73 @@ public class RecipeMapper {
                 }
             }
         }
-        HttpResponse<String> response = Unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients="+ingredients)
-                .header("x-rapidapi-host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
-                .header("x-rapidapi-key", "95e63d77d8mshcd6163a94d2be7bp15c756jsn981c624f96fc")
-                .asString();
 
-        ArrayList<Recipe> recipes = this.ingrResultsToRecipe("{results :"+response.getBody()+"}");
-        System.out.println( response.getBody());
+        // GET request
+        String response = this.request(this.ingrURL+ingredients);
+        System.out.println(response);
+
+        ArrayList<Recipe> recipes = this.resultsToRecipe("{results :"+response+"}");
+        System.out.println(recipes.get(0).toString());
         return recipes;
     }
 
+    // Fá lista eftir nafni
     public ArrayList<Recipe> getResultsTitle(String title/*, String type*/) throws UnirestException {
-        HttpResponse<String> response = Unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=25&offset=0&type=main%20course&query="+title)
-                .header("x-rapidapi-host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
-                .header("x-rapidapi-key", "95e63d77d8mshcd6163a94d2be7bp15c756jsn981c624f96fc")
-                .asString();
 
-        System.out.println( response.getBody());
+        String response = this.request(this.titleURL+title);
 
-        ArrayList<Recipe> recipes = this.titleResultsToRecipe(response.getBody());
+        System.out.println(response);
+
+        ArrayList<Recipe> recipes = this.resultsToRecipe(response);
+        System.out.println(recipes.get(0).toString());
         return recipes;
     }
 
-    private ArrayList<Recipe> titleResultsToRecipe(String json){
+    // Recipe details, bætir líka við restinni af upplýsingum um uppskrift
+    public Recipe getDetails(Recipe recipe) throws UnirestException {
+
+        int id = recipe.getId();
+        String response = this.request(this.infoURL[0]+id+this.infoURL[1]);
+
+        JSONObject obj = new JSONObject("{results :["+response+"]}");
+        JSONArray r = obj.getJSONArray("results");
+        recipe.setInstructions(r.getJSONObject(0).getString("instructions"));
+        recipe.setReadyInMinutes(r.getJSONObject(0).getInt("readyInMinutes"));
+        recipe.setServings(r.getJSONObject(0).getInt("servings"));
+
+        JSONArray ingr = r.getJSONObject(0).getJSONArray("extendedIngredients");
+
+        for(int i = 0; i<ingr.length(); i++){
+            recipe.setIngredients(ingr.getJSONObject(i).getString("original"));
+        }
+        System.out.println(recipe.getIngredients().size());
+
+
+        return recipe;
+    }
+
+    // Draga út uppl sem við viljum úr svari frá api
+    private ArrayList<Recipe> resultsToRecipe(String json){
 
         ArrayList<Recipe> recipes = new ArrayList();
         JSONObject obj = new JSONObject(json);
-        JSONArray scores = obj.getJSONArray("results");
-        for (int i = 0; i < scores.length(); i++) {
-            JSONObject element = scores.getJSONObject(i);
+        JSONArray r = obj.getJSONArray("results");
+        for (int i = 0; i < r.length(); i++) {
+            JSONObject element = r.getJSONObject(i);
             Recipe object = new Recipe();
             object.setId(element.getInt("id"));
-            object.setServings(element.getInt("servings"));
             object.setTitle(element.getString("title"));
-            object.setImage(baseUri+element.getString("image"));
-            object.setReadyInMinutes(element.getInt("readyInMinutes"));
+
+            //Mismunandi hvort þarf að bæta við baseUri eða ekki
+            if(element.getString("image").contains("https")){
+                object.setImage(element.getString("image"));
+            } else{
+                object.setImage(baseUri+element.getString("image"));
+            }
+
             recipes.add(object);
         }
-        System.out.println(recipes.get(0).toString());
-        System.out.println(recipes.size());
+
         return recipes;
     }
 
@@ -75,9 +109,9 @@ public class RecipeMapper {
     private ArrayList<Recipe> ingrResultsToRecipe(String json) {
         ArrayList<Recipe> recipes = new ArrayList();
         JSONObject obj = new JSONObject(json);
-        JSONArray scores = obj.getJSONArray("results");
-        for (int i = 0; i < scores.length(); i++) {
-            JSONObject element = scores.getJSONObject(i);
+        JSONArray r = obj.getJSONArray("results");
+        for (int i = 0; i < r.length(); i++) {
+            JSONObject element = r.getJSONObject(i);
             Recipe object = new Recipe();
             object.setId(element.getInt("id"));
             object.setTitle(element.getString("title"));
@@ -87,6 +121,15 @@ public class RecipeMapper {
         System.out.println(recipes.get(0).toString());
         return recipes;
     }
+
+    private String request(String url) throws UnirestException {
+        HttpResponse<String> response = Unirest.get(url)
+                .header("x-rapidapi-host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
+                .header("x-rapidapi-key", "95e63d77d8mshcd6163a94d2be7bp15c756jsn981c624f96fc")
+                .asString();
+        return response.getBody();
+    }
+
 
 }
 

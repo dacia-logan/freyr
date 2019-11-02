@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.ArrayList;
 
 @Entity
 public class Recipe {
@@ -16,21 +17,21 @@ public class Recipe {
     private int readyInMinutes;
     private int servings;
     private String image;
-    private String description;
-
+    private String instructions;
+    private ArrayList<String> ingredients = new ArrayList<String>();
     // ------------------- Constructor ----------------------------
 
     public Recipe() {
     }
 
-    public Recipe(String title, String description, Double rating) {
+    public Recipe(String title, String instructions, Double rating) {
 
     }
 
     // ------------------- Getters & Setters ----------------------
 
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -62,12 +63,12 @@ public class Recipe {
         this.readyInMinutes = readyInMinutes;
     }
 
-    public String getDescription() {
-        return description;
+    public String getInstructions() {
+        return instructions;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
     }
 
     public String getImage() {
@@ -78,10 +79,16 @@ public class Recipe {
         this.image = image;
     }
 
+    public void setIngredients(String ingredient){
+        this.ingredients.add(ingredient);
+    }
 
+    public ArrayList<String> getIngredients(){
+        return this.ingredients;
+    }
     @Override
     public String toString(){
-        String s = this.id+" "+this.title;
+        String s = "ID: "+this.id+"  Title: "+this.title+"  Image: "+this.image;
         return s;
     }
 }
