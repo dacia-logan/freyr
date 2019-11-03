@@ -70,11 +70,24 @@ public class userController {
 
     // LOGIN PAGE FUNCTIONS
 
+    /**
+     * @param user
+     * @return login page
+     */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginGET(User user){
         return "login";
     }
 
+    /**
+     * reviews the userName and password and if results have errors returns the login page again,
+     * else it returns the home page and the user is signed in
+     * @param user
+     * @param result
+     * @param model
+     * @param session
+     * @return home page or login
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginPOST(@Valid User user, BindingResult result, Model model, HttpSession session){
         if(result.hasErrors()){
@@ -89,6 +102,12 @@ public class userController {
         return "home";
     }
 
+    /**
+     * shows the user name of the user that is logged in
+     * @param session
+     * @param model
+     * @return home page
+     */
     @RequestMapping(value = "/loggedin", method = RequestMethod.GET)
     public String loggedinGET(HttpSession session, Model model){
 
