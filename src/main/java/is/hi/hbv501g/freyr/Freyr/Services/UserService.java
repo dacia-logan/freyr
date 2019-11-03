@@ -12,9 +12,11 @@ public interface UserService {
     void changePassword(User user, String newPassword);
     void delete(User user);
     User findById(long id);
-    Boolean validate(long id, String password);
+    User validate(User user);
     ArrayList<Recipe> getFavorites(String title);
 
     List<User> findAll();
+    User findByUserName(String userName);
+    User login(User user);
 
 }

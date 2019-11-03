@@ -6,6 +6,14 @@
 </head>
 <body>
 <div th:switch="${users}">
+    <h1>Users In system</h1>
+
+    <div>
+        <button>
+            <a href="/">Home</a>
+        </button>
+    </div>
+
     <h2 th:case="null">No users yet!</h2>
     <div th:case="*">
         <h2>Users</h2>
@@ -30,7 +38,6 @@
             </tbody>
         </table>
     </div>
-    <p><a href="/">home</a></p>
 </div>
 </body>
 </html>

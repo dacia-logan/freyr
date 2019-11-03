@@ -41,8 +41,30 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public Boolean validate(long id, String password) {
-        // todo útfæra þetta
+    public User findByUserName(String userName) {
+        return userRepo.findByUserName(userName);
+    }
+
+    @Override
+    public User login(User user) {
+        User exists = findByUserName(user.getUserName());
+        if(exists != null){
+            if(exists.getPassword().equals(user.getPassword())){
+                return user;
+            }
+        }
+        return null;
+    }
+
+    // login method
+    @Override
+    public User validate(User user) {
+        User exists = findByUserName(user.getUserName());
+        if(exists != null){
+            if(exists.getPassword().equals(user.getPassword())){
+                return user;
+            }
+        }
         return null;
     }
 
