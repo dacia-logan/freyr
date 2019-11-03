@@ -16,6 +16,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     void delete(User user);
     Optional<User> findById(Long id);
     List<User> findAll(); // bætti þessu við til prufu
+    User findByUserName(String userName);
 
     //Boolean validate(long id, String password);
     //ArrayList<Recipe> getFavorites(String title);

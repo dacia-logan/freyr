@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public interface RecipeRepository extends JpaRepository<Recipe, int> {
+public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
 
     Recipe save(Recipe recipe);
     void delete(Recipe recipe);
-    Recipe findById(int id);
+    Optional<Recipe> findById(Integer id);
     ArrayList<Recipe> findAll();
 }
