@@ -11,6 +11,7 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String title;
     private String instructions;
     private double rating;

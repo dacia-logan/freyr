@@ -20,9 +20,9 @@ public class userController {
     private RecipeService recipeService;
 
     @Autowired
-    public userController(UserService userService) {
+    public userController(UserService userService, RecipeService recipeService) {
         this.userService = userService;
-        this.recipeService = new RecipeService();
+        this.recipeService = recipeService;
     }
 
     // USER PAGE FUNCTIONS
