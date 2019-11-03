@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3aefe79-a039-4c9f-a71f-478ca38d7800" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Freyr.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/Freyr.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/UserService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="252">
+              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,11 +28,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Repositories/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            <state relative-caret-position="336">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -48,39 +49,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="742">
-              <caret line="59" column="13" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+            <state relative-caret-position="504">
+              <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#624#625#0" expanded="true" />
                 <element signature="e#665#666#0" expanded="true" />
                 <element signature="e#1126#1127#0" expanded="true" />
                 <element signature="e#1156#1157#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/userController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1301#1302#0" expanded="true" />
-                <element signature="e#1332#1333#0" expanded="true" />
-                <element signature="e#2369#2370#0" expanded="true" />
-                <element signature="e#2399#2400#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,11 +89,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="442" column="53" lean-forward="true" selection-start-line="442" selection-start-column="53" selection-end-line="442" selection-end-column="53" />
+            <state relative-caret-position="515">
+              <caret line="453" column="19" lean-forward="true" selection-start-line="453" selection-start-column="19" selection-end-line="453" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-630">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,14 +149,14 @@
         <option value="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/signup.html" />
         <option value="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Repositories/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.java" />
         <option value="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/userController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/loggedInUser.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user.html" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.java" />
       </list>
     </option>
   </component>
@@ -362,7 +350,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303000" />
+    <option name="totallyTimeSpent" value="620000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -374,7 +362,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.18869936" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.18869936" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49946696" weight="0.3290461" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50053304" side_tool="true" weight="0.29046088" />
@@ -386,7 +374,7 @@
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49946696" weight="0.3290461" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49946696" weight="0.3290461" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" sideWeight="0.49946696" visible="true" weight="0.3033226" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.49946696" weight="0.3033226" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
@@ -438,6 +426,87 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="453" column="19" lean-forward="true" selection-start-line="453" selection-start-column="19" selection-end-line="453" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1156#1157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/userController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1301#1302#0" expanded="true" />
+            <element signature="e#1332#1333#0" expanded="true" />
+            <element signature="e#2369#2370#0" expanded="true" />
+            <element signature="e#2399#2400#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-630">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

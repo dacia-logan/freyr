@@ -17,6 +17,5 @@ public interface UserService {
 
     List<User> findAll();
     User findByUserName(String userName);
-    User login(User user);
 
 }

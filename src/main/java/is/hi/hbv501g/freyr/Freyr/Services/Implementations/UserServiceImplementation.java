@@ -45,17 +45,6 @@ public class UserServiceImplementation implements UserService {
         return userRepo.findByUserName(userName);
     }
 
-    @Override
-    public User login(User user) {
-        User exists = findByUserName(user.getUserName());
-        if(exists != null){
-            if(exists.getPassword().equals(user.getPassword())){
-                return user;
-            }
-        }
-        return null;
-    }
-
     // login method
     @Override
     public User validate(User user) {
