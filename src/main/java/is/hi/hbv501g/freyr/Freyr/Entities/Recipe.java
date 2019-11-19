@@ -1,12 +1,10 @@
 package is.hi.hbv501g.freyr.Freyr.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 
 @Entity
+@Table(name = "RECIPE")
 public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +17,7 @@ public class Recipe {
     private int readyInMinutes;
     private int servings;
     private ArrayList<String> ingredients = new ArrayList<String>();
-    private ArrayList<Recipe> favorite;
+    // private ArrayList<Recipe> favorite; //á þetta nokkuð að vera hér?
 
     // ------------------- Constructor ----------------------------
 
@@ -27,6 +25,9 @@ public class Recipe {
     }
 
     public Recipe(String title, int id, String image) {
+        this.title = title;
+        this.id = id;
+        this.image = image;
     }
 
     public int getId() {

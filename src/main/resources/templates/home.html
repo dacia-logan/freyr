@@ -21,6 +21,12 @@
     <button>
         <a href="/search">Search</a>
     </button>
+    <button>
+        <a href="/recipe">Recipe</a>
+    </button>
+    <button>
+        <a href="/favoriteRecipes">Favorite Recipe</a>
+    </button>
 
 
 <div th:switch="${recipes}">
@@ -35,11 +41,11 @@
                 <th>Rating</th>
             </tr>
             </thead>
-            <!-- <tbody>
-            <tr th:each="movie : ${movies}">
-                <td th:text="${movie.title}"></td>
-                <td th:text="${movie.description}"></td>
-                <td th:text="${movie.rating}"></td>
+           <!-- <tbody>
+            <tr th:each="results : ${recipes}">
+                <td th:text="${results.title}"></td>
+                <td th:text="${results.description}"></td>
+                <td th:text="${results.rating}"></td>
             </tr>
             </tbody> -->
         </table>

@@ -16,7 +16,7 @@ public class RecipeServiceImplementation implements RecipeService {
     RecipeRepository recipeRepo;
 
     @Autowired
-    public RecipeServiceImplementation( RecipeRepository recipeRepo) {
+    public RecipeServiceImplementation(RecipeRepository recipeRepo) {
         this.recipeRepo = recipeRepo;
     }
 
