@@ -24,12 +24,24 @@
             <tr>
                 <th>title</th>
                 <th>id</th>
+                <th>rating</th>
+                <th>preparation time</th>
+                <th>servings</th>
+                <th>ingredients</th>
+                <th>instructions</th>
+                <th>image</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="recipe : ${recipes}">
                 <td th:text="${recipe.title}"></td>
                 <td th:text="${recipe.id}"></td>
+                <td th:text="${recipe.rating}"></td>
+                <td th:text="${recipe.readyInMinutes}"></td>
+                <td th:text="${recipe.servings}"></td>
+                <td th:text="${recipe.ingredients}"></td>
+                <td th:text="${recipe.instructions}"></td>
+                <td><img th:src="${recipe.image}" width="50px"></td>
             </tr>
             </tbody>
         </table>

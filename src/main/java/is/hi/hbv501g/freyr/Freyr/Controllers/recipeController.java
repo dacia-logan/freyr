@@ -76,7 +76,7 @@ public class recipeController {
         clickedRecipe.setReadyInMinutes(10);
         clickedRecipe.setServings(3);
         clickedRecipe.setRating(5.0);
-        clickedRecipe.setImage("lasagne.png");
+        clickedRecipe.setImage("https://images.pexels.com/photos/2765875/pexels-photo-2765875.jpeg?cs=srgb&dl=baked-close-up-creamy-2765875.jpg&fm=jpg");
         return clickedRecipe;
     }
 
