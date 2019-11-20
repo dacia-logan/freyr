@@ -18,7 +18,7 @@ public class Recipe {
     private int readyInMinutes;
     private int servings;
     private ArrayList<String> ingredients = new ArrayList<String>();
-    private ArrayList<Recipe> favorite;
+
 
     // ------------------- Constructor ----------------------------
 
