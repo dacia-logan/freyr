@@ -2,6 +2,7 @@ package is.hi.hbv501g.freyr.Freyr.Controllers;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
 import is.hi.hbv501g.freyr.Freyr.Entities.Recipe;
+import is.hi.hbv501g.freyr.Freyr.Entities.User;
 import is.hi.hbv501g.freyr.Freyr.Services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.validation.BindingResult;
+import is.hi.hbv501g.freyr.Freyr.Utilities.AlertsToUser;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.ArrayList;
 
@@ -18,6 +21,7 @@ import java.util.ArrayList;
 public class recipeController {
 
     private RecipeService recServ;
+    private AlertsToUser alertsToUser = new AlertsToUser(); // this is one of the utilities classes
 
     @Autowired
     public recipeController(RecipeService recipeServices){
@@ -32,9 +36,14 @@ public class recipeController {
 
     // shows in detail the recipe that was clicked
     @RequestMapping(value="/recipe", method=RequestMethod.GET)
-    public String recipeInformation(Recipe clickedRecipe, Model model){
+    public String recipeInformation(Recipe clickedRecipe, Model model, HttpSession session){
         // todo taka út þessa prufu
         clickedRecipe = createFakeRecipe();
+
+        User sessionUser = (User) session.getAttribute("LoggedInUser");
+        String message = alertsToUser.messageLogin(sessionUser);
+
+        model.addAttribute("message", message);
 
         //þetta er sniðugt ef við viljum ekki byrta bara arrayList í html-inu
         //það þarf að búa til hlutinn data svo að ingredients byrtist rétt í html
@@ -49,19 +58,28 @@ public class recipeController {
     // the method will save that recipe and it will be
     // accessible in a list of the users favorite recipes
     @RequestMapping(value="/recipe", method=RequestMethod.POST)
-    public String addToFavorites(@Valid Recipe recipe, BindingResult result, Model model)  {
-        // todo taka út þessa prufu
-        recipe = createFakeRecipe();
+    public String addToFavorites(@Valid Recipe recipe, BindingResult result, Model model, HttpSession session)  {
+        // notify the user if not logged in
+        User sessionUser = (User) session.getAttribute("LoggedInUser");
+        String message = alertsToUser.messageLogin(sessionUser);
+        model.addAttribute("message", message);
 
-        if(result.hasErrors()){
-            return "recipe";
+        // if user is logged in we add recipe to favorites
+        if (sessionUser != null) {
+            // todo taka út þessa prufu
+           recipe = createFakeRecipe();
+           if(result.hasErrors()){
+               return "recipe";
+           }
+           Recipe exists = recServ.findById(recipe.getId());
+           if (exists == null) {
+               recServ.save(recipe);
+           }
+           model.addAttribute("recipe", recipe);
         }
-        Recipe exists = recServ.findById(recipe.getId());
-        if (exists == null) {
-            recServ.save(recipe);
-        }
-        model.addAttribute("recipe", recipe);
-        return "/recipe";
+
+        // redirect to the recipe page
+        return "redirect:/recipe";
     }
 
     // todo taka út þegar recipes hlutir eru klárir í slaginn

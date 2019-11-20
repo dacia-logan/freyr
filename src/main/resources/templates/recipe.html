@@ -6,8 +6,17 @@
 </head>
 
 <style>
+    body {
+        font-family: arial, sans-serif;
+    }
+
     table {
         border-collapse: collapse;
+    }
+
+    .alert {
+        font-size: small;
+        font-style: italic;
     }
 
     td, th {
@@ -38,6 +47,7 @@
         border-left-style: hidden;
         border-bottom-style: hidden;
         outline: none;
+        font-family: arial, sans-serif;
     }
 
     .image {
@@ -72,21 +82,21 @@
 
             <br>
 
-            <label for="rating">Rating</label>
+            <label for="rating">Rating: </label>
             <input class="noBorders" type="text" th:field="*{rating}" id="rating" th:placeholder="${recipe.rating}"
                    readonly>
             <span th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}"></span>
 
             <br>
 
-            <label for="servings">Servings</label>
+            <label for="servings">Servings: </label>
             <input class="noBorders" type="text" th:field="*{servings}" id="servings"
                    th:placeholder="${recipe.servings}" readonly>
             <span th:if="${#fields.hasErrors('servings')}" th:errors="*{servings}"></span>
 
             <br>
 
-            <label for="readyInMinutes">Preperation time</label>
+            <label for="readyInMinutes">Preperation time: </label>
             <input class="noBorders" type="text" th:field="*{readyInMinutes}" id="readyInMinutes"
                    th:placeholder="${recipe.readyInMinutes}" readonly>
             <span th:if="${#fields.hasErrors('readyInMinutes')}" th:errors="*{readyInMinutes}"></span>
@@ -108,11 +118,15 @@
 
             <p id="instruct">Instructions</p>
             <textarea class="noBorders" th:field="*{instructions}" id="instructions"
-                      th:text="${recipe.instructions}"></textarea>
+                      th:text="${recipe.instructions}" readonly></textarea>
             <span th:if="${#fields.hasErrors('instructions')}" th:errors="*{instructions}"></span>
 
             <br>
             <br>
+
+            <div th:switch="${message}">
+                <p class="alert" th:case="*" th:text="${message}"></p>
+            </div>
 
             <input type="submit" value="Add recipe to favorites"/>
 
@@ -120,6 +134,7 @@
 
     </div>
 </div>
+
 
 
 </body>
