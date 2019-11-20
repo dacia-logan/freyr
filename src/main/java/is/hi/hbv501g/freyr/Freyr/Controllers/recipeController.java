@@ -40,6 +40,7 @@ public class recipeController {
         // todo taka út þessa prufu
         clickedRecipe = createFakeRecipe();
 
+        // notify the user if not logged in
         User sessionUser = (User) session.getAttribute("LoggedInUser");
         String message = alertsToUser.messageLogin(sessionUser);
 
@@ -99,9 +100,16 @@ public class recipeController {
     }
 
     // sets up and shows all favorite recipes of the user
+    // if there are no favorite recipes the page will say so
     @RequestMapping(value="/favoriteRecipes", method=RequestMethod.GET)
     public String favoriteRecipe(Model model){
-        model.addAttribute("recipes", recServ.findAll());
+        int size = recServ.findAll().size();
+
+        if(size == 0) {
+            model.addAttribute("recipes", null);
+        } else {
+            model.addAttribute("recipes", recServ.findAll());
+        }
         return "/favoriteRecipes";
     }
 

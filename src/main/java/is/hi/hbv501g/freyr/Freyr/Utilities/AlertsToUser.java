@@ -19,4 +19,17 @@ public class AlertsToUser {
 
         return message;
     }
+
+    public String messageSignup(User sessionUser) {
+        // if user is logged in dont alert
+        String message = "";
+
+        // if user is not logged in alert
+        if(sessionUser == null) {
+            message = "you need to sign up first";
+        }
+
+        return message;
+    }
+
 }
