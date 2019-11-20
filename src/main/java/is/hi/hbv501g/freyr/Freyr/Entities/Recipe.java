@@ -1,16 +1,15 @@
 package is.hi.hbv501g.freyr.Freyr.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 
 @Entity
+@Table(name = "RECIPE")
 public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String title;
     private String instructions;
     private double rating;
@@ -20,12 +19,16 @@ public class Recipe {
     private ArrayList<String> ingredients = new ArrayList<String>();
 
 
+
     // ------------------- Constructor ----------------------------
 
     public Recipe() {
     }
 
     public Recipe(String title, int id, String image) {
+        this.title = title;
+        this.id = id;
+        this.image = image;
     }
 
     public int getId() {

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Freyr</title>
+</head>
+<body>
+<h1>Freyr</h1>
+
+<div>
+    <button>
+        <a href="/">Home</a>
+    </button>
+</div>
+
+<h2>Search for recipies</h2>
+<form action="#" th:action="@{/search}"  method="post">
+    <input type="text" name="foodType" id="foodType" th:value="${foodType}"/>
+    <input type="submit" value="Search"/>
+</form>
+
+</body>
+</html>

@@ -6,6 +6,18 @@
 </head>
 <body>
 <h1>Login</h1>
-    <p><a href="/">Home</a></p>
+
+    <div>
+        <button>
+            <a href="/">Home</a>
+        </button>
+    </div>
+
+    <h2>Login to your account</h2>
+    <form action="#" th:action="@{/login}" th:object="${user}"  method="post">
+        <input type="text" name="userName" id="userName" th:field="*{userName}"/>
+        <input type="text" name="password" id="password" th:value="*{password}"/>
+        <input type="submit" value="Login"/>
+    </form>
 </body>
 </html>
