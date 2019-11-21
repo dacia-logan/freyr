@@ -3,6 +3,7 @@ package is.hi.hbv501g.freyr.Freyr.Controllers;
 import is.hi.hbv501g.freyr.Freyr.Entities.User;
 import is.hi.hbv501g.freyr.Freyr.Services.RecipeService;
 import is.hi.hbv501g.freyr.Freyr.Services.UserService;
+import is.hi.hbv501g.freyr.Freyr.Utilities.AlertsToUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,7 @@ public class userController {
 
     private UserService userService;
     private RecipeService recipeService;
+    private AlertsToUser alertsToUser = new AlertsToUser(); // this is one of the utilities classes
 
     @Autowired
     public userController(UserService userService, RecipeService recipeService) {
@@ -49,71 +51,58 @@ public class userController {
         return "signup";
     }
 
-    /**
-     * @param user
-     * @param result
-     * @param model
-     * @return redirects to home page
-     */
+    // sign up page
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String signUpPOST(@Valid User user, BindingResult result, Model model){
         if(result.hasErrors()){
             return "signup";
         }
-        User exists = userService.findById(user.getId());
+
+        String message = "Username already exists";
+        User exists = userService.findByUserName(user.getUserName());
+
         if(exists == null){
+            model.addAttribute("recipes",recipeService.findAll());
             userService.save(user);
+            return "home";
         }
-        model.addAttribute("recipes", recipeService.findAll());
-        return "home";
+
+        model.addAttribute("message", message);
+        return "signup";
     }
 
-    // LOGIN PAGE FUNCTIONS
-
-    /**
-     * @param user
-     * @return login page
-     */
+    // login page setup
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginGET(User user){
+    public String loginGET(User user, Model model){
         return "login";
     }
 
-    /**
-     * reviews the userName and password and if results have errors returns the login page again,
-     * else it returns the home page and the user is signed in
-     * @param user
-     * @param result
-     * @param model
-     * @param session
-     * @return home page or login
-     */
+    // identifies the user if exists and returns to home page
+    // else shows a message to the user informing him about the error
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginPOST(@Valid User user, BindingResult result, Model model, HttpSession session){
         if(result.hasErrors()){
             return "login";
         }
-        model.addAttribute("recipes",recipeService.findAll());
+
+        String message = "Incorrect user information or user does not exist";
         User exists = userService.validate(user);
-        if(exists != null){
+
+        if (exists != null) {
+            model.addAttribute("recipes",recipeService.findAll());
             session.setAttribute("LoggedInUser", user);
             return "home";
         }
-        return "home";
+
+        model.addAttribute("message", message);
+        return "login";
     }
 
-    /**
-     * shows the user name of the user that is logged in
-     * @param session
-     * @param model
-     * @return home page
-     */
+    // shows the user name of the user that is logged in
     @RequestMapping(value = "/loggedin", method = RequestMethod.GET)
     public String loggedinGET(HttpSession session, Model model){
-
-        model.addAttribute("recipes",recipeService.findAll());
         User sessionUser = (User) session.getAttribute("LoggedInUser");
-        if(sessionUser  != null){
+        if(sessionUser != null){
             model.addAttribute("loggedinuser", sessionUser);
             return "loggedInUser";
         }
