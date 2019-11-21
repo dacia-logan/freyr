@@ -2,13 +2,14 @@ package is.hi.hbv501g.freyr.Freyr.Entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Set;
 
 @Entity
-@Table(name = "RECIPE")
+@Table(name = "recipe")
 public class Recipe {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private String title;
     private String instructions;
@@ -18,6 +19,9 @@ public class Recipe {
     private int servings;
     private ArrayList<String> ingredients = new ArrayList<String>();
 
+    @ManyToMany(mappedBy = "favorite")
+    private Set<User> userId;
+
 
 
     // ------------------- Constructor ----------------------------
@@ -25,17 +29,17 @@ public class Recipe {
     public Recipe() {
     }
 
-    public Recipe(String title, int id, String image) {
+    public Recipe(String title, Integer id, String image) {
         this.title = title;
         this.id = id;
         this.image = image;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -89,6 +93,9 @@ public class Recipe {
 
     }
 
+    public void addUser(User user){
+        userId.add(user);
+    }
 
    /* public int getIngredientsMiss() {
         return ingredientsMiss;
