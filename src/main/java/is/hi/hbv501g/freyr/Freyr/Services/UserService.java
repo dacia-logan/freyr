@@ -13,7 +13,6 @@ public interface UserService {
     void delete(User user);
     User findById(long id);
     User validate(User user);
-    ArrayList<Recipe> getFavorites(String title);
 
     List<User> findAll();
     User findByUserName(String userName);
