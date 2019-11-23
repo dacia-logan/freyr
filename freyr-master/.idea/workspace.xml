@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c3aefe79-a039-4c9f-a71f-478ca38d7800" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/FreyrApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/FreyrApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Repositories/RecipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Repositories/RecipeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/RecipeServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/RecipeServiceImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/homeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/.gitignore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/Code Review/Assignment 1 - group 22.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/Code Review/Assignment 2 - Behavior Models.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/Code Review/DesignModelA3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/out/production/.mvn/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/out/production/.mvn/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/userController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/FreyrApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Repositories/RecipeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Repositories/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/RecipeServiceImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/AlertsToUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/resources/templates/favoriteRecipes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/resources/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/resources/templates/lasagne.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/resources/templates/loggedInUser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/resources/templates/recipe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/resources/templates/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/resources/templates/signup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/main/resources/templates/user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/src/test/java/is/hi/hbv501g/freyr/Freyr/FreyrApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/userController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/FreyrApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Repositories/RecipeRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Repositories/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Services/Implementations/RecipeServiceImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Services/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/AlertsToUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/templates/favoriteRecipes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/templates/lasagne.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/templates/loggedInUser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/templates/recipe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/templates/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/templates/signup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/classes/templates/user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbvf/target/test-classes/is/hi/hbv501g/freyr/Freyr/FreyrApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/.mvn/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/.mvn/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/is/hi/hbv501g/freyr/Freyr/FreyrApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/is/hi/hbv501g/freyr/Freyr/Repositories/RecipeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/RecipeServiceImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/is/hi/hbv501g/freyr/Freyr/homeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/is/hi/hbv501g/freyr/Freyr/FreyrApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/freyr$FreyrApplication.ic" NAME="FreyrApplication Coverage Results" MODIFIED="1574170931249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="209" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Thorsteinn\Desktop\freyr-master\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1RzCPcH7MfoKskABLj9Nq6ikTYh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574351462042" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../freyr" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\Documents\Skóli\5. Haust 2019\Ákveðnir áfangar\Hugbúnaðarverkefni 1\Verkefni\freyr\src\main\resources\templates" />
+      <recent name="C:\Users\Lenovo\Documents\Skóli\5. Haust 2019\Ákveðnir áfangar\Hugbúnaðarverkefni 1\Verkefni\freyr\src\main\resources\images" />
+      <recent name="C:\Users\Lenovo\Documents\Skóli\5. Haust 2019\Ákveðnir áfangar\Hugbúnaðarverkefni 1\Verkefni\freyr\src\main\java\is\hi\hbv501g\freyr\Freyr" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="FreyrApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Freyr" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="is.hi.hbv501g.freyr.Freyr.FreyrApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3aefe79-a039-4c9f-a71f-478ca38d7800" name="Default Changelist" comment="" />
+      <created>1570660514979</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570660514979</updated>
+      <workItem from="1570660516239" duration="8422000" />
+      <workItem from="1570920574962" duration="2488000" />
+      <workItem from="1572366735932" duration="6675000" />
+      <workItem from="1572481429813" duration="558000" />
+      <workItem from="1572482062464" duration="22000" />
+      <workItem from="1572626176973" duration="5151000" />
+      <workItem from="1572713997366" duration="3731000" />
+      <workItem from="1573030433972" duration="2002000" />
+      <workItem from="1573118183221" duration="745000" />
+      <workItem from="1573118998842" duration="590000" />
+      <workItem from="1573640718605" duration="1479000" />
+      <workItem from="1574079947501" duration="56441000" />
+      <workItem from="1574547315593" duration="1493000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8.0_151</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Freyr</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
