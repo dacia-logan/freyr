@@ -57,11 +57,11 @@ public class UserServiceImplementation implements UserService {
         return null;
     }
 
-    @Override
+    /*@Override
     public ArrayList<Recipe> getFavorites(String title) {
         // todo útfæra þetta
         return null;
-    }
+    }*/
 
     @Override
     public List<User> findAll() {

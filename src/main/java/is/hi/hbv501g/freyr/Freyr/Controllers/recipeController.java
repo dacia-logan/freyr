@@ -123,8 +123,8 @@ public class recipeController {
         //todo Tekur við því sem notandinn slær inn og sendir það á mapperinn
         //todo Hægt að commenta þetta út á þá má sjá uppskriftina prenntast út á skipanalínu
 
-        //RecipeMapper rMap = new RecipeMapper();
-        //rMap.getResultsTitle(foodType);
+        recServ.getResults(foodType);
+        model.addAttribute("recipes", recServ.getResults(foodType));
         return "search";
     }
 

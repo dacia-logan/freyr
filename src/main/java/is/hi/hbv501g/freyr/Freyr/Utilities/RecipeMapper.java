@@ -104,8 +104,10 @@ public class RecipeMapper {
         return recipes;
     }
 
-    // Þarf að hafa seperate aðferðir til að breyta í Recipe hlut vegna mismunandi
-    // svara frá Spoonacular API
+  /*
+
+ /// Óþarft held ég
+
     private ArrayList<Recipe> ingrResultsToRecipe(String json) {
         ArrayList<Recipe> recipes = new ArrayList();
         JSONObject obj = new JSONObject(json);
@@ -120,7 +122,7 @@ public class RecipeMapper {
         }
         System.out.println(recipes.get(0).toString());
         return recipes;
-    }
+    }*/
 
     private String request(String url) throws UnirestException {
         HttpResponse<String> response = Unirest.get(url)
