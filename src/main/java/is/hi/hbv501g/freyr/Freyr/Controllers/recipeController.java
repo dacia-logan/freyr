@@ -16,6 +16,7 @@ import is.hi.hbv501g.freyr.Freyr.Utilities.AlertsToUser;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.Set;
 
 @Controller
 public class recipeController {
@@ -37,11 +38,12 @@ public class recipeController {
     // shows in detail the recipe that was clicked
     @RequestMapping(value="/recipe", method=RequestMethod.GET)
     public String recipeInformation(Recipe clickedRecipe, Model model, HttpSession session){
+        User sessionUser = (User) session.getAttribute("LoggedInUser");
         // todo taka út þessa prufu
-        clickedRecipe = createFakeRecipe();
+        clickedRecipe = createFakeRecipe(sessionUser);
 
         // notify the user if not logged in
-        User sessionUser = (User) session.getAttribute("LoggedInUser");
+
         String message = alertsToUser.messageLogin(sessionUser);
 
         model.addAttribute("message", message);
@@ -65,17 +67,29 @@ public class recipeController {
         String message = alertsToUser.messageLogin(sessionUser);
         model.addAttribute("message", message);
 
-        // if user is logged in we add recipe to favorites
+        // if user is logged in and has not saved the recipe to favorites already
+        // we add the recipe to favorites
         if (sessionUser != null) {
             // todo taka út þessa prufu
-           recipe = createFakeRecipe();
+           recipe = createFakeRecipe(sessionUser);
+
+           // check for errors
            if(result.hasErrors()){
                return "recipe";
            }
+
+           // check if already in users favorites
+            if(recServ.findByUserId(sessionUser.getId()).size() == 0){
+                System.out.println("enginn uppskrift með þannan notanda sem eiganda");
+            } else {
+                System.out.println("það er uppskrift með þennan notanda nú þegar: " + recServ.findByUserId(sessionUser.getId()));
+            }
+
            Recipe exists = recServ.findById(recipe.getId());
            if (exists == null) {
                recServ.save(recipe);
            }
+
            model.addAttribute("recipe", recipe);
         }
 
@@ -85,7 +99,7 @@ public class recipeController {
 
     // todo taka út þegar recipes hlutir eru klárir í slaginn
     // býr til gerfi recipe hlut
-    public Recipe createFakeRecipe(){
+    public Recipe createFakeRecipe(User user){
         Recipe clickedRecipe = new Recipe();
         clickedRecipe.setId(1);
         clickedRecipe.setTitle("Lasagne");
@@ -96,6 +110,7 @@ public class recipeController {
         clickedRecipe.setServings(3);
         clickedRecipe.setRating(5.0);
         clickedRecipe.setImage("https://images.pexels.com/photos/2765875/pexels-photo-2765875.jpeg?cs=srgb&dl=baked-close-up-creamy-2765875.jpg&fm=jpg");
+        //clickedRecipe.addUser(user);
         return clickedRecipe;
     }
 
