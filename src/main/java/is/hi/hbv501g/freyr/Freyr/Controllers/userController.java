@@ -1,5 +1,6 @@
 package is.hi.hbv501g.freyr.Freyr.Controllers;
 
+import is.hi.hbv501g.freyr.Freyr.Entities.Recipe;
 import is.hi.hbv501g.freyr.Freyr.Entities.User;
 import is.hi.hbv501g.freyr.Freyr.Services.RecipeService;
 import is.hi.hbv501g.freyr.Freyr.Services.UserService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.ArrayList;
 
 @Controller
 public class userController {
@@ -100,6 +102,7 @@ public class userController {
         return "login";
     }
 
+    // todo remove this method
     // shows the user name of the user that is logged in
     @RequestMapping(value = "/loggedin", method = RequestMethod.GET)
     public String loggedinGET(HttpSession session, Model model){
@@ -109,5 +112,31 @@ public class userController {
             return "loggedInUser";
         }
         return "home";
+    }
+
+    // sets up the user profile
+    // only displays values if user is logged in
+    @RequestMapping(value="/profile", method=RequestMethod.GET)
+    public String userProfileGet(Model model,  HttpSession session){
+        // get the session user (the logged in user)
+        User sessionUser = (User) session.getAttribute("LoggedInUser");
+
+        if(sessionUser != null){
+            model.addAttribute("loggedinuser", sessionUser);
+        }
+
+        // setup an array for possible recipes that the user has saved
+        ArrayList<Recipe> recipes = new ArrayList<>();
+
+        if(sessionUser == null) {                                                   // no one is logged in
+            model.addAttribute("recipes", null);                            // display no recipes
+        } else {
+            for(int i=0; i<sessionUser.getFavorite().size(); i++) {
+                recipes.add(recipeService.findById(sessionUser.getFavorite().get(i)));    // get the recipes with the id-s the user has added to favorites
+            }
+            model.addAttribute("recipes", recipes);
+        }
+
+        return "/profile";
     }
 }

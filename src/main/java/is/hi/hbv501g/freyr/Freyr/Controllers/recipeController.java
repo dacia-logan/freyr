@@ -124,6 +124,7 @@ public class recipeController {
         return clickedRecipe;
     }
 
+    // todo remove this method
     // sets up and shows all favorite recipes of the user
     // if there are no favorite recipes the page will say so
     @RequestMapping(value="/favoriteRecipes", method=RequestMethod.GET)
@@ -173,6 +174,8 @@ public class recipeController {
     @RequestMapping
 
      */
+
+
     
 
 

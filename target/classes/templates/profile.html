@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body>
+
+<h1>User Profile</h1>
+
+<div>
+    <button>
+        <a href="/">Home</a>
+    </button>
+</div>
+
+<div th:switch="${loggedinuser}">
+
+    <h3 th:case="null">You are not logged in!</h3>
+    <div th:case="*">
+        <h3>User name: </h3>
+        <p th:text="${loggedinuser.userName}"></p>
+
+        <h3>Email: </h3>
+        <p th:text="${loggedinuser.email}"></p>
+    </div>
+
+</div>
+
+<div th:switch="${recipes}">
+
+    <h3 th:case="null">No favorite recipes yet!</h3>
+    <div th:case="*">
+        <h3>Favorite Recipes</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>title</th>
+                <th>id</th>
+                <th>rating</th>
+                <th>preparation time</th>
+                <th>servings</th>
+                <th>ingredients</th>
+                <th>instructions</th>
+                <th>image</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="recipe : ${recipes}">
+                <td th:text="${recipe.title}"></td>
+                <td th:text="${recipe.id}"></td>
+                <td th:text="${recipe.rating}"></td>
+                <td th:text="${recipe.readyInMinutes}"></td>
+                <td th:text="${recipe.servings}"></td>
+                <td th:text="${recipe.ingredients}"></td>
+                <td th:text="${recipe.instructions}"></td>
+                <td><img th:src="${recipe.image}" width="200px"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
