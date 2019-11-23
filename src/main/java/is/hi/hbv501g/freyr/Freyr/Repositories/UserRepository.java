@@ -21,6 +21,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     Optional<User> findById(Long id);
     List<User> findAll(); // bætti þessu við til prufu
     User findByUserName(String userName);
+    //void updateFavorite(User user, Integer recipeId);
 
     //Boolean validate(long id, String password);
     //ArrayList<Recipe> getFavorites(String title);

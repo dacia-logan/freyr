@@ -15,5 +15,6 @@ public interface UserService {
     User validate(User user);
     List<User> findAll();
     User findByUserName(String userName);
+    User updateFavorite(User user, Integer recipeId);
 
 }

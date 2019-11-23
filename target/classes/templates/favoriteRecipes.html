@@ -30,7 +30,6 @@
                 <th>ingredients</th>
                 <th>instructions</th>
                 <th>image</th>
-                <th>owner</th>
             </tr>
             </thead>
             <tbody>
@@ -43,7 +42,6 @@
                 <td th:text="${recipe.ingredients}"></td>
                 <td th:text="${recipe.instructions}"></td>
                 <td><img th:src="${recipe.image}" width="50px"></td>
-                <td th:text="${recipe.userId}"></td>
             </tr>
             </tbody>
         </table>

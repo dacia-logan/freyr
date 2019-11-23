@@ -10,7 +10,7 @@ public interface RecipeService {
     void delete(Recipe recipe);
     Recipe findById(Integer id);
     ArrayList<Recipe> findAll();
-    ArrayList<Recipe> findByUserId(Integer id);
+    //ArrayList<Recipe> findByUserId(Integer id);
     ArrayList<Recipe> getResults(String title) throws UnirestException;
 
 }
