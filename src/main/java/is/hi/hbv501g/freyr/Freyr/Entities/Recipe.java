@@ -118,4 +118,13 @@ public class Recipe {
         String s = "ID: "+this.id+"  Title: "+this.title+"  Image: "+this.image;
         return s;
     }
+
+    public Set<User> getUserId() {
+        System.out.print(userId);
+        return userId;
+    }
+
+    public void setUserId(Set<User> userId) {
+        this.userId = userId;
+    }
 }
