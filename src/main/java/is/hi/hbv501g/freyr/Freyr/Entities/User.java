@@ -2,6 +2,7 @@ package is.hi.hbv501g.freyr.Freyr.Entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -15,11 +16,11 @@ public class User {
     private String email;
     private String password;
 
-    @ManyToMany
-    @JoinTable(name = "fav_recipes", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "recipe_id"))
-    private Set<Recipe> favorite;
+    //@ManyToMany
+    //@JoinTable(name = "fav_recipes", joinColumns = @JoinColumn(name = "users_id"), inverseJoinColumns = @JoinColumn(name = "recipe_id"))
+    private ArrayList<Integer> favorite = new ArrayList<>();
 
-    public User(Integer id, String userName, String email, String password, Set<Recipe> favorite) {
+    public User(Integer id, String userName, String email, String password, ArrayList<Integer> favorite) {
         this.id = id;
         this.userName = userName;
         this.email = email;
@@ -68,12 +69,16 @@ public class User {
         this.password = password;
     }
 
-    public Set<Recipe> getFavorite() {
+
+    public ArrayList<Integer> getFavorite() {
         return favorite;
     }
 
-    public void setFavorite(Recipe favorite) {
-        this.favorite.add(favorite);
+    public void setFavorite(ArrayList<Integer> favorite) {
+        this.favorite = favorite;
     }
 
+    public void addToFavorite(Integer id) {
+        favorite.add(id);
+    }
 }

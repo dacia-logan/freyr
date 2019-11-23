@@ -81,6 +81,7 @@ public class userController {
     // else shows a message to the user informing him about the error
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginPOST(@Valid User user, BindingResult result, Model model, HttpSession session){
+
         if(result.hasErrors()){
             return "login";
         }
@@ -89,6 +90,7 @@ public class userController {
         User exists = userService.validate(user);
 
         if (exists != null) {
+            user = userService.findByUserName(user.getUserName());
             model.addAttribute("recipes",recipeService.findAll());
             session.setAttribute("LoggedInUser", user);
             return "home";

@@ -43,8 +43,9 @@ public class RecipeServiceImplementation implements RecipeService {
     public ArrayList<Recipe> findAll() {
         return recipeRepo.findAll();
     }
-    @Override
-    public ArrayList<Recipe> findByUserId(Integer id){ return  recipeRepo.findByUserId(id);}
+
+    /*@Override
+    public ArrayList<Recipe> findByUserId(Integer id){ return  recipeRepo.findByUserId(id);}*/
 
     public ArrayList<Recipe> getResults(String title) throws UnirestException {
         return mapper.getResultsTitle(title);

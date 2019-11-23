@@ -4,6 +4,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import is.hi.hbv501g.freyr.Freyr.Entities.Recipe;
 import is.hi.hbv501g.freyr.Freyr.Entities.User;
 import is.hi.hbv501g.freyr.Freyr.Services.RecipeService;
+import is.hi.hbv501g.freyr.Freyr.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,9 @@ import is.hi.hbv501g.freyr.Freyr.Utilities.AlertsToUser;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -23,10 +26,12 @@ public class recipeController {
 
     private RecipeService recServ;
     private AlertsToUser alertsToUser = new AlertsToUser(); // this is one of the utilities classes
+    private UserService userService;
 
     @Autowired
-    public recipeController(RecipeService recipeServices){
+    public recipeController(RecipeService recipeServices, UserService userService){
         this.recServ = recipeServices;
+        this.userService = userService;
     }
 
     // sets up the basic home page
@@ -40,10 +45,9 @@ public class recipeController {
     public String recipeInformation(Recipe clickedRecipe, Model model, HttpSession session){
         User sessionUser = (User) session.getAttribute("LoggedInUser");
         // todo taka út þessa prufu
-        clickedRecipe = createFakeRecipe(sessionUser);
+        clickedRecipe = createFakeRecipe();
 
         // notify the user if not logged in
-
         String message = alertsToUser.messageLogin(sessionUser);
 
         model.addAttribute("message", message);
@@ -62,8 +66,10 @@ public class recipeController {
     // accessible in a list of the users favorite recipes
     @RequestMapping(value="/recipe", method=RequestMethod.POST)
     public String addToFavorites(@Valid Recipe recipe, BindingResult result, Model model, HttpSession session)  {
-        // notify the user if not logged in
+        // get the session user (the logged in user)
         User sessionUser = (User) session.getAttribute("LoggedInUser");
+
+        // notify the user if not logged in
         String message = alertsToUser.messageLogin(sessionUser);
         model.addAttribute("message", message);
 
@@ -71,24 +77,29 @@ public class recipeController {
         // we add the recipe to favorites
         if (sessionUser != null) {
             // todo taka út þessa prufu
-           recipe = createFakeRecipe(sessionUser);
+           recipe = createFakeRecipe();
 
-           // check for errors
            if(result.hasErrors()){
                return "recipe";
            }
 
-           // check if already in users favorites
-            if(recServ.findByUserId(sessionUser.getId()).size() == 0){
-                System.out.println("enginn uppskrift með þannan notanda sem eiganda");
-            } else {
-                System.out.println("það er uppskrift með þennan notanda nú þegar: " + recServ.findByUserId(sessionUser.getId()));
+            boolean alreadySaved = false;
+
+            for (int i = 0; i < sessionUser.getFavorite().size(); i++) {                    //check all of users favorite recipes
+                if (sessionUser.getFavorite().get(i).equals(recipe.getId())) {              //if any user favorite id equals recipe id
+                    alreadySaved = true;                                                    //the user already has saved the recipe so dont save again
+                }
             }
 
-           Recipe exists = recServ.findById(recipe.getId());
-           if (exists == null) {
-               recServ.save(recipe);
-           }
+            if (!alreadySaved) {                                                            // if not saved to favorites
+                sessionUser = userService.updateFavorite(sessionUser, recipe.getId());      // update user favorites in user database
+                session.setAttribute("LoggedInUser", sessionUser);                      // update user favorites in session
+            }
+
+            Recipe exists = recServ.findById(recipe.getId());
+            if (exists == null) {                                                       // if recipe does not exist in recipe database
+                recipe = recServ.save(recipe);                                          // add recipe to recipe database
+            }
 
            model.addAttribute("recipe", recipe);
         }
@@ -99,7 +110,7 @@ public class recipeController {
 
     // todo taka út þegar recipes hlutir eru klárir í slaginn
     // býr til gerfi recipe hlut
-    public Recipe createFakeRecipe(User user){
+    public Recipe createFakeRecipe(){
         Recipe clickedRecipe = new Recipe();
         clickedRecipe.setId(1);
         clickedRecipe.setTitle("Lasagne");
@@ -110,21 +121,28 @@ public class recipeController {
         clickedRecipe.setServings(3);
         clickedRecipe.setRating(5.0);
         clickedRecipe.setImage("https://images.pexels.com/photos/2765875/pexels-photo-2765875.jpeg?cs=srgb&dl=baked-close-up-creamy-2765875.jpg&fm=jpg");
-        //clickedRecipe.addUser(user);
         return clickedRecipe;
     }
 
     // sets up and shows all favorite recipes of the user
     // if there are no favorite recipes the page will say so
     @RequestMapping(value="/favoriteRecipes", method=RequestMethod.GET)
-    public String favoriteRecipe(Model model){
-        int size = recServ.findAll().size();
+    public String favoriteRecipe(Model model,  HttpSession session){
+        // get the session user (the logged in user)
+        User sessionUser = (User) session.getAttribute("LoggedInUser");
 
-        if(size == 0) {
-            model.addAttribute("recipes", null);
+        // setup an array for possible recipes that the user has saved
+        ArrayList<Recipe> recipes = new ArrayList<>();
+
+        if(sessionUser == null) {                                                   // no one is logged in
+            model.addAttribute("recipes", null);                            // display no recipes
         } else {
-            model.addAttribute("recipes", recServ.findAll());
+            for(int i=0; i<sessionUser.getFavorite().size(); i++) {
+                recipes.add(recServ.findById(sessionUser.getFavorite().get(i)));    // get the recipes with the id-s the user has added to favorites
+            }
+            model.addAttribute("recipes", recipes);
         }
+
         return "/favoriteRecipes";
     }
 
