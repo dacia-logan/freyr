@@ -120,7 +120,7 @@ public class userController {
     public String userProfileGet(Model model,  HttpSession session){
         // get the session user (the logged in user)
         User sessionUser = (User) session.getAttribute("LoggedInUser");
-        System.out.println(sessionUser.getFavorite().size());
+
         if(sessionUser != null){
             model.addAttribute("loggedinuser", sessionUser);
         }

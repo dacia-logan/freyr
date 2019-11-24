@@ -9,15 +9,16 @@ import java.util.Set;
 @Table(name = "recipe")
 public class Recipe {
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String index;
     private String title;
+    @Column(columnDefinition = "VARCHAR(100000)")   // make sure the column is big enough
     private String instructions;
     private double rating;
     private String image;
     private int readyInMinutes;
     private int servings;
+    @Column(columnDefinition = "VARCHAR(100000)")   // make sure the column is big enough
     private ArrayList<String> ingredients = new ArrayList<String>();
     private boolean fullInfo = false;
     public Recipe() {
