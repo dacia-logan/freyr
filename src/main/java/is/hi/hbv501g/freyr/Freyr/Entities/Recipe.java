@@ -11,7 +11,7 @@ public class Recipe {
     @Id
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    private String index;
     private String title;
     private String instructions;
     private double rating;
@@ -19,7 +19,7 @@ public class Recipe {
     private int readyInMinutes;
     private int servings;
     private ArrayList<String> ingredients = new ArrayList<String>();
-
+    private boolean fullInfo = false;
     public Recipe() {
     }
 
@@ -27,6 +27,22 @@ public class Recipe {
         this.title = title;
         this.id = id;
         this.image = image;
+    }
+
+    public void setFullInfo(){
+        this.fullInfo=true;
+    }
+
+    public boolean getFullInfo(){
+        return this.fullInfo;
+    }
+
+    public String getIndex() {
+        return this.index;
+    }
+
+    public void setIndex(int i) {
+        this.index = ""+i;
     }
 
     public Integer getId() {

@@ -42,22 +42,23 @@ public class recipeController {
 
     // shows in detail the recipe that was clicked
     @RequestMapping(value="/recipe", method=RequestMethod.GET)
-    public String recipeInformation(Recipe clickedRecipe, Model model, HttpSession session){
+    public String recipeInformation( Recipe clickedRecipe, Model model, HttpSession session){
         User sessionUser = (User) session.getAttribute("LoggedInUser");
         // todo taka út þessa prufu
-        clickedRecipe = createFakeRecipe();
+
 
         // notify the user if not logged in
         String message = alertsToUser.messageLogin(sessionUser);
 
         model.addAttribute("message", message);
 
+        clickedRecipe = recServ.getSelectedRecipe();
         //þetta er sniðugt ef við viljum ekki byrta bara arrayList í html-inu
         //það þarf að búa til hlutinn data svo að ingredients byrtist rétt í html
         //ArrayList<String> data = clickedRecipe.getIngredients();
         //model.addAttribute("ingredients", data);
         model.addAttribute("recipe", clickedRecipe);
-        return "recipe";
+        return "/recipe";
     }
 
     // shows in detail the recipe that was clicked
@@ -67,21 +68,24 @@ public class recipeController {
     @RequestMapping(value="/recipe", method=RequestMethod.POST)
     public String addToFavorites(@Valid Recipe recipe, BindingResult result, Model model, HttpSession session)  {
         // get the session user (the logged in user)
+
         User sessionUser = (User) session.getAttribute("LoggedInUser");
 
         // notify the user if not logged in
         String message = alertsToUser.messageLogin(sessionUser);
         model.addAttribute("message", message);
 
+
         // if user is logged in and has not saved the recipe to favorites already
         // we add the recipe to favorites
         if (sessionUser != null) {
             // todo taka út þessa prufu
-           recipe = createFakeRecipe();
 
-           if(result.hasErrors()){
-               return "recipe";
-           }
+            recipe = recServ.getSelectedRecipe();
+
+            if(result.hasErrors()){
+                return "recipe";
+            }
 
             boolean alreadySaved = false;
 
@@ -89,7 +93,10 @@ public class recipeController {
                 if (sessionUser.getFavorite().get(i).equals(recipe.getId())) {              //if any user favorite id equals recipe id
                     alreadySaved = true;                                                    //the user already has saved the recipe so dont save again
                 }
+
             }
+
+
 
             if (!alreadySaved) {                                                            // if not saved to favorites
                 sessionUser = userService.updateFavorite(sessionUser, recipe.getId());      // update user favorites in user database
@@ -99,9 +106,10 @@ public class recipeController {
             Recipe exists = recServ.findById(recipe.getId());
             if (exists == null) {                                                       // if recipe does not exist in recipe database
                 recipe = recServ.save(recipe);                                          // add recipe to recipe database
+
             }
 
-           model.addAttribute("recipe", recipe);
+            model.addAttribute("recipe", recipe);
         }
 
         // redirect to the recipe page
@@ -151,16 +159,32 @@ public class recipeController {
     public String Searched(){
         return "search";
     }
-
-    @RequestMapping(value = "/search", method=RequestMethod.POST)
-    public String typeSearch(@RequestParam(required=false, value="foodType") String foodType, Model model) throws UnirestException {
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    public String search(@RequestParam(required = false, value = "index") String
+                                     index, @RequestParam(required = false, value = "foodType") String foodType, Model model) throws
+            UnirestException {
         //todo Tekur við því sem notandinn slær inn og sendir það á mapperinn
         //todo Hægt að commenta þetta út á þá má sjá uppskriftina prenntast út á skipanalínu
 
-        recServ.getResults(foodType);
-        model.addAttribute("recipes", recServ.getResults(foodType));
+        //recServ.getResults(foodType);
+        if (foodType.length() > 0) {
+            model.addAttribute("recipes", recServ.getResults(foodType));
+        }
+
+        if (index != null) {
+            System.out.println(index);
+            recServ.setSelectedRecipe(Integer.parseInt(index));
+            if (recServ.getSelectedRecipe().getFullInfo() == false) {
+                recServ.getDetails(recServ.getSelectedRecipe());
+                recServ.getSelectedRecipe().setFullInfo();
+            }
+            System.out.println(recServ.getSelectedRecipe().toString());
+            return "redirect:/recipe";
+        }
+
         return "search";
     }
+
 
     /*
     Þurfum svo annan controller fyrir að velja ingredients síðar
