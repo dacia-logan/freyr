@@ -116,8 +116,8 @@
             <div th:switch="${message}">
                 <p class="alert" th:case="*" th:text="${message}"></p>
             </div>
-            <button  name="index" id ="index" th:value="${recipe.index}">Add to favorites</button>
-            <!--<input type="submit" th:value="fav" value="Add Recipe to Favorites"/>-->
+
+            <input type="submit" th:value="fav" value="Add Recipe to Favorites"/>
 
         </form>
     </div>
