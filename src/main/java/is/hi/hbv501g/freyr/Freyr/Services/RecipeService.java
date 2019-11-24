@@ -13,7 +13,10 @@ public interface RecipeService {
     ArrayList<Recipe> findAll();
     //ArrayList<Recipe> findByUserId(Integer id);
     ArrayList<Recipe> getResults(String title) throws UnirestException;
-    Recipe getSelectedRecipe();
     void getDetails(Recipe recipe) throws UnirestException;
     void setSelectedRecipe(int i);
+    Recipe getSelectedRecipe();
+    String getSearch();
+    void setSearch(String s);
+    ArrayList<Recipe> getListInUse();
 }

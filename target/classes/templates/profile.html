@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>User Profile</title>
+    <style>
+        #title{
+            font-size: 15;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,19 +19,24 @@
         <a href="/">Home</a>
     </button>
 </div>
-
+<form action="#" th:action="@{/profile}"   method="post">
 <div th:switch="${loggedinuser}">
 
     <h3 th:case="null">You are not logged in!</h3>
     <div th:case="*">
         <h3>User name: </h3>
         <p th:text="${loggedinuser.userName}"></p>
+        <button>
+            <a href="/settings">Change Password</a>
+        </button>
 
         <h3>Email: </h3>
         <p th:text="${loggedinuser.email}"></p>
     </div>
 
 </div>
+
+
 
 <div th:switch="${recipes}">
 
@@ -35,31 +46,29 @@
         <table>
             <thead>
             <tr>
-                <th>title</th>
-                <th>id</th>
-                <th>rating</th>
-                <th>preparation time</th>
-                <th>servings</th>
-                <th>ingredients</th>
-                <th>instructions</th>
-                <th>image</th>
+                <th>Title</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="recipe : ${recipes}">
-                <td th:text="${recipe.title}"></td>
-                <td th:text="${recipe.id}"></td>
-                <td th:text="${recipe.rating}"></td>
-                <td th:text="${recipe.readyInMinutes}"></td>
-                <td th:text="${recipe.servings}"></td>
-                <td th:text="${recipe.ingredients}"></td>
-                <td th:text="${recipe.instructions}"></td>
-                <td><img th:src="${recipe.image}" width="200px"></td>
+                <td id = "title" th:text="${recipe.title}"></td>
+                <td><img th:src="${recipe.image}", width="300px" height="300px"></td>
+                <td>
+
+                   <button  name="id" id ="id" th:value="${recipe.id}"/>Look At Recipe</button>
+
+                </td>
+                <td>
+
+                    <button  name="delete" id ="delete" th:value="${recipe.id}"/>Remove From Favorites</button>
+
+                </td>
+
             </tr>
             </tbody>
         </table>
     </div>
 </div>
-
+</form>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Change Password</title>
+</head>
+
+<body>
+
+<style>
+    .alert {
+        font-size: small;
+        font-style: italic;
+    }
+</style>
+
+<h1>Sign Up</h1>
+
+<button>
+    <a href="/">Home</a>
+</button>
+
+
+
+<h2>Please fill in this form to create an account</h2>
+
+<div th:switch="${loggedinuser}">
+
+    <form action="#" th:action="@{/settings}" th:object="${user}" method="post">
+
+        <label>Old Password: </label>
+        <br>
+        <input type="text" name="password" id="password"  required/>
+        <div th:switch="${message}">
+            <p class="alert" th:case="*" th:text="${message}"></p>
+        </div>
+
+        <label>New Password: </label>
+        <br>
+        <input type="text" name="npassword" id="npassword" required/>
+        <br>
+
+        <input type="submit" value="Change Password"/>
+    </form>
+</div>
+
+</body>
+

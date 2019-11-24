@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -120,7 +121,7 @@ public class userController {
     public String userProfileGet(Model model,  HttpSession session){
         // get the session user (the logged in user)
         User sessionUser = (User) session.getAttribute("LoggedInUser");
-        System.out.println(sessionUser.getFavorite().size());
+
         if(sessionUser != null){
             model.addAttribute("loggedinuser", sessionUser);
         }
@@ -139,4 +140,55 @@ public class userController {
 
         return "/profile";
     }
+
+    @RequestMapping(value="/profile", method=RequestMethod.POST)
+    public String recipeOperations(@RequestParam(required = false, value = "id") String id,@RequestParam(required = false, value = "delete") String remove, Model model, HttpSession session){
+        // get the session user (the logged in user)
+        User sessionUser = (User) session.getAttribute("LoggedInUser");
+
+        if(id!=null) {
+            Recipe recipe = recipeService.findById(Integer.parseInt(id));
+            model.addAttribute("recipe", recipe);
+        }
+        if(remove != null){
+            for(int i = 0; i < sessionUser.getFavorite().size(); i++){
+                if(sessionUser.getFavorite().get(i) == Integer.parseInt(remove)){
+                    sessionUser.getFavorite().remove(i);
+                    userService.save(sessionUser);
+                    return "/profile";
+                }
+            }
+        }
+
+        return "redirect:/recipe";
+    }
+
+
+    @RequestMapping(value = "/settings", method = RequestMethod.GET)
+    public String changePwGET(User user){
+        return "settings";
+    }
+
+    @RequestMapping(value="/settings", method=RequestMethod.POST)
+    public String changePwPOST(@RequestParam(value = "password")String pw, @RequestParam(value = "npassword")String npw, HttpSession session, Model model){
+
+
+        User sessionUser = (User) session.getAttribute("LoggedInUser");
+        model.addAttribute("loggedinuser", sessionUser);
+        System.out.println(sessionUser.getPassword());
+        userService.findByUserName(sessionUser.getUserName());
+        if(!pw.equals(sessionUser.getPassword())){
+            String message = alertsToUser.wrongPassword();
+            model.addAttribute("message", message);
+            return "/settings";
+        }else{
+            sessionUser.setPassword(npw);
+            userService.save(sessionUser);
+            session.setAttribute("LoggedInUser", sessionUser);
+            System.out.println(sessionUser.getPassword()+"EFVIRKAR");
+        }
+
+        return "/profile";
+    }
+
 }

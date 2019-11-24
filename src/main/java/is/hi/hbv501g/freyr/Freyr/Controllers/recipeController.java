@@ -36,28 +36,27 @@ public class recipeController {
 
     // sets up the basic home page
     @RequestMapping("/")
-    public String Home(){
+    public String Home(Model model){
+        model.addAttribute("loggedinuser", null);
         return "home";
     }
 
     // shows in detail the recipe that was clicked
     @RequestMapping(value="/recipe", method=RequestMethod.GET)
     public String recipeInformation( Recipe clickedRecipe, Model model, HttpSession session){
+        // get the session user (the logged in user)
         User sessionUser = (User) session.getAttribute("LoggedInUser");
-        // todo taka út þessa prufu
 
+        // get the clicked recipe
+        clickedRecipe = recServ.getSelectedRecipe();
 
-        // notify the user if not logged in
+        // notify the user if not logged in with a message
         String message = alertsToUser.messageLogin(sessionUser);
-
         model.addAttribute("message", message);
 
-        clickedRecipe = recServ.getSelectedRecipe();
-        //þetta er sniðugt ef við viljum ekki byrta bara arrayList í html-inu
-        //það þarf að búa til hlutinn data svo að ingredients byrtist rétt í html
-        //ArrayList<String> data = clickedRecipe.getIngredients();
-        //model.addAttribute("ingredients", data);
+        // setup the recipe for html
         model.addAttribute("recipe", clickedRecipe);
+
         return "/recipe";
     }
 
@@ -68,19 +67,15 @@ public class recipeController {
     @RequestMapping(value="/recipe", method=RequestMethod.POST)
     public String addToFavorites(@Valid Recipe recipe, BindingResult result, Model model, HttpSession session)  {
         // get the session user (the logged in user)
-
         User sessionUser = (User) session.getAttribute("LoggedInUser");
 
         // notify the user if not logged in
         String message = alertsToUser.messageLogin(sessionUser);
         model.addAttribute("message", message);
 
-
         // if user is logged in and has not saved the recipe to favorites already
         // we add the recipe to favorites
         if (sessionUser != null) {
-            // todo taka út þessa prufu
-
             recipe = recServ.getSelectedRecipe();
 
             if(result.hasErrors()){
@@ -93,22 +88,19 @@ public class recipeController {
                 if (sessionUser.getFavorite().get(i).equals(recipe.getId())) {              //if any user favorite id equals recipe id
                     alreadySaved = true;                                                    //the user already has saved the recipe so dont save again
                 }
-
             }
-
-
 
             if (!alreadySaved) {                                                            // if not saved to favorites
                 sessionUser = userService.updateFavorite(sessionUser, recipe.getId());      // update user favorites in user database
                 session.setAttribute("LoggedInUser", sessionUser);                      // update user favorites in session
             }
 
+
             Recipe exists = recServ.findById(recipe.getId());
             if (exists == null) {                                                       // if recipe does not exist in recipe database
                 recipe = recServ.save(recipe);                                          // add recipe to recipe database
-
             }
-
+            // setup the recipe for html
             model.addAttribute("recipe", recipe);
         }
 
@@ -159,6 +151,7 @@ public class recipeController {
     public String Searched(){
         return "search";
     }
+
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     public String search(@RequestParam(required = false, value = "index") String
                                      index, @RequestParam(required = false, value = "foodType") String foodType, Model model) throws
@@ -168,13 +161,18 @@ public class recipeController {
 
         //recServ.getResults(foodType);
         if (foodType.length() > 0) {
-            model.addAttribute("recipes", recServ.getResults(foodType));
+            if(foodType.equals(recServ.getSearch())){
+                model.addAttribute("recipes",recServ.getListInUse());
+            }else{
+                model.addAttribute("recipes", recServ.getResults(foodType));
+            }
+            recServ.setSearch(foodType);
         }
 
         if (index != null) {
             System.out.println(index);
             recServ.setSelectedRecipe(Integer.parseInt(index));
-            if (recServ.getSelectedRecipe().getFullInfo() == false) {
+            if (recServ.getSelectedRecipe().getFullInfo() == false ) {
                 recServ.getDetails(recServ.getSelectedRecipe());
                 recServ.getSelectedRecipe().setFullInfo();
             }
