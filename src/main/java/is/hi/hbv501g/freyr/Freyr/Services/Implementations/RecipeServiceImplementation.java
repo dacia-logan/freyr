@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 @Service
@@ -17,6 +17,8 @@ public class RecipeServiceImplementation implements RecipeService {
 
     RecipeRepository recipeRepo;
     RecipeMapper mapper = new RecipeMapper();
+    List<Recipe> results = new ArrayList<Recipe>();
+    Recipe selectedRecipe;
 
     @Autowired
     public RecipeServiceImplementation(RecipeRepository recipeRepo) {
@@ -44,10 +46,30 @@ public class RecipeServiceImplementation implements RecipeService {
         return recipeRepo.findAll();
     }
 
+
     /*@Override
     public ArrayList<Recipe> findByUserId(Integer id){ return  recipeRepo.findByUserId(id);}*/
 
+
+    @Override
     public ArrayList<Recipe> getResults(String title) throws UnirestException {
-        return mapper.getResultsTitle(title);
+        this.results = mapper.getResultsTitle(title);
+        return (ArrayList<Recipe>) this.results;
+    }
+
+
+    @Override
+    public void setSelectedRecipe(int i) {
+        this.selectedRecipe = this.results.get(i);
+    }
+
+    @Override
+    public Recipe getSelectedRecipe(){
+        return this.selectedRecipe;
+    }
+
+    @Override
+    public void getDetails(Recipe recipe) throws UnirestException {
+        this.mapper.getDetails(recipe);
     }
 }

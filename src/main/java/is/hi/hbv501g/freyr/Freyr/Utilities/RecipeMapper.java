@@ -89,6 +89,7 @@ public class RecipeMapper {
             JSONObject element = r.getJSONObject(i);
             Recipe object = new Recipe();
             object.setId(element.getInt("id"));
+            object.setIndex(i);
             object.setTitle(element.getString("title"));
 
             //Mismunandi hvort þarf að bæta við baseUri eða ekki
