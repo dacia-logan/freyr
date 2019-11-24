@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Freyr</title>
+</head>
+<body>
+<h1>Freyr</h1>
+
+<div>
+    <button>
+        <a href="/">Home</a>
+    </button>
+</div>
+
+<h2>Search for recipies</h2>
+<form action="#" th:action="@{/search}"  method="post">
+    <input type="text" name="foodType" id="foodType" th:value="${foodType}"/>
+    <input type="submit" value="Search"/>
+
+    <div th:switch="${recipes}">
+        <h1>Recipes</h1>
+        <h2 th:case="null">No results!</h2>
+        <div th:case="*">
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <!-- <th>favorites</th>-->
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="recipe : ${recipes}">
+                    <td th:text="${recipe.title}"></td>
+                    <td><img th:src="${recipe.image}", width="300px" height="300px"></td>
+                    <td>
+                        <button  name="index" id ="index" th:value="${recipe.index}"/><!--<a href="/recipe">-->Look At Recipe</button><!--</a>-->
+                    </td>
+                    <!--<button><a href="/recipe" value = "${recipe.index}">Skoða</a></button></td>-->
+                    <!--   <button>
+                           <a href="/recipe">Recipe</a>
+                       </button> -->
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

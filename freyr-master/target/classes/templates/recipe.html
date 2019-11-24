@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe information</title>
+</head>
+
+<style>
+    body {
+        font-family: serif;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    .alert {
+        font-size: small;
+        font-style: italic;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    #title {
+        font-size: xx-large;
+        font-weight: bold;
+        padding-bottom: 30px;
+    }
+
+    #ingred, #instruct {
+        font-size: x-large;
+        font-weight: bold;
+        font-family: serif;
+    }
+
+    textarea {
+        width: 55%;
+        height: 600px;
+        font-family: serif;
+    }
+
+    .noBorders {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: hidden;
+        outline: none;
+        font-family: serif;
+    }
+
+    .image {
+        padding-top: 30px;
+    }
+
+</style>
+
+<body>
+
+<h1>Recipe Details</h1>
+
+<div>
+    <button>
+        <a href="/">Home</a>
+    </button>
+</div>
+
+<div th:switch="${recipe}">
+
+
+
+    <div th:case="*">
+
+        <form action="#" th:action="@{/recipe}" th:object="${recipe}" method="get">
+
+            <br>
+
+            <input class="noBorders" type="text" th:field="*{title}" id="title" th:placeholder="${recipe.title}"
+                   readonly>
+            <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+
+            <br>
+            <label for="servings">Servings: </label>
+            <input class="noBorders" type="text" th:field="*{servings}" id="servings"
+                   th:placeholder="${recipe.servings}" readonly>
+            <span th:if="${#fields.hasErrors('servings')}" th:errors="*{servings}"></span>
+
+            <br>
+
+            <label for="readyInMinutes">Ready in minutes: </label>
+            <input class="noBorders" type="text" th:field="*{readyInMinutes}" id="readyInMinutes"
+                   th:placeholder="${recipe.readyInMinutes}" readonly>
+            <span th:if="${#fields.hasErrors('readyInMinutes')}" th:errors="*{readyInMinutes}"></span>
+
+            <br>
+
+            <img th:src="${recipe.image}", width="400px" height="400px">
+            <span th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></span>
+
+            <br>
+            <p id="ingredients">Ingredients</p>
+            <ul th:each="ingred : ${recipe.ingredients}">
+                <li th:text="${ingred}"></li>
+            </ul>
+            <br>
+
+            <p id="instruct">Instructions</p>
+            <textarea class="noBorders" th:field="*{instructions}" id="instructions"
+                      th:text="${recipe.instructions}" readonly></textarea>
+            <span th:if="${#fields.hasErrors('instructions')}" th:errors="*{instructions}"></span>
+
+
+            <div th:switch="${message}">
+                <p class="alert" th:case="*" th:text="${message}"></p>
+            </div>
+            <button  name="index" id ="index" th:value="${recipe.index}">Add to favorites</button>
+            <!--<input type="submit" th:value="fav" value="Add Recipe to Favorites"/>-->
+
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+</html>
