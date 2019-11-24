@@ -101,8 +101,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Freyr.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/recipe.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +198,7 @@
       <workItem from="1573640718605" duration="1479000" />
       <workItem from="1574079947501" duration="56441000" />
       <workItem from="1574549270989" duration="5738000" />
-      <workItem from="1574571408179" duration="63000" />
+      <workItem from="1574571408179" duration="215000" />
     </task>
     <servers />
   </component>
