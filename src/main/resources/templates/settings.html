@@ -31,15 +31,16 @@
 
         <label>Old Password: </label>
         <br>
-        <input type="text" name="password" id="password"  required/>
+        <input type="password" name="password" id="password"  required/>
         <div th:switch="${message}">
             <p class="alert" th:case="*" th:text="${message}"></p>
         </div>
 
         <label>New Password: </label>
         <br>
-        <input type="text" name="npassword" id="npassword" required/>
+        <input type="password" name="npassword" id="npassword" required/>
         <br>
+
 
         <input type="submit" value="Change Password"/>
     </form>

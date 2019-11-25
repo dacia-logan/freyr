@@ -31,7 +31,15 @@ public class userController {
     }
 
     // USER PAGE FUNCTIONS
-
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public String logOut(@RequestParam(value = "logout", required = false) String logout, HttpSession session){
+        if(logout != null){
+            System.out.println("BPPÐ");
+            session.setAttribute("LoggedInUser", null);
+            return "home";
+        }
+        return "home";
+    }
     /**
      * @param model
      * @return redirects to user page where all users can be seen
@@ -164,13 +172,17 @@ public class userController {
         }
         if(remove != null){
             for(int i = 0; i < sessionUser.getFavorite().size(); i++){
-                if(sessionUser.getFavorite().get(i) == Integer.parseInt(remove)){
+                if(sessionUser.getFavorite().get(i) == Integer.parseInt(remove)) {
                     sessionUser.getFavorite().remove(i);
-                    model.addAttribute("recipes", null);
-                    model.addAttribute("loggedinuser", sessionUser);
-                    userService.save(sessionUser);
-                    return "/profile";
                 }
+                model.addAttribute("loggedinuser", sessionUser);
+                ArrayList<Recipe> recipes = new ArrayList<>();
+                for(int j=0; i<sessionUser.getFavorite().size(); i++) {
+                    recipes.add(recipeService.findById(sessionUser.getFavorite().get(j)));    // get the recipes with the id-s the user has added to favorites
+                }
+                model.addAttribute("recipes", recipes);
+                userService.save(sessionUser);
+                return "/profile";
             }
         }
 
