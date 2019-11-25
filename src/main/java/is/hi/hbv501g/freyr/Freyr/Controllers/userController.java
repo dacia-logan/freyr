@@ -175,18 +175,20 @@ public class userController {
                 if(sessionUser.getFavorite().get(i) == Integer.parseInt(remove)) {
                     sessionUser.getFavorite().remove(i);
                 }
-                model.addAttribute("loggedinuser", sessionUser);
-                ArrayList<Recipe> recipes = new ArrayList<>();
-                for(int j=0; i<sessionUser.getFavorite().size(); i++) {
-                    recipes.add(recipeService.findById(sessionUser.getFavorite().get(j)));    // get the recipes with the id-s the user has added to favorites
-                }
+            }
+
+            ArrayList<Recipe> recipes = new ArrayList<>();
+            for(int j=0; j<sessionUser.getFavorite().size(); j++) {
+                recipes.add(recipeService.findById(sessionUser.getFavorite().get(j)));    // get the recipes with the id-s the user has added to favorites
+            }
                 model.addAttribute("recipes", recipes);
+                model.addAttribute("loggedinuser", sessionUser);
                 userService.save(sessionUser);
                 return "/profile";
-            }
+
         }
 
-        return "redirect:/recipe";
+        return "/recipe";
     }
 
 
@@ -214,7 +216,7 @@ public class userController {
             System.out.println(sessionUser.getPassword()+"EFVIRKAR");
         }
 
-        return "/profile";
+        return "redirect:/profile";
     }
 
 }
