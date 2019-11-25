@@ -36,7 +36,11 @@ public class recipeController {
 
     // sets up the basic home page
     @RequestMapping("/")
-    public String Home(Model model){
+    public String Home(Model model, HttpSession session){
+        if(session.getAttribute("LoggedInUser") != null){
+            model.addAttribute("loggedinuser",session.getAttribute("LoggedInUser"));
+            return "home";
+        }
         model.addAttribute("loggedinuser", null);
         return "home";
     }

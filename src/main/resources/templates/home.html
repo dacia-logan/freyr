@@ -8,15 +8,26 @@
     p {
         width: 60%;
     }
+
+    #log{
+        font-weight: bold;
+    }
 </style>
 <body>
 <h1>Freyr</h1>
+<div th:switch="${loggedinuser}">
 
+    <h3 th:case="null"></h3>
+    <div th:case="*">
+        <p id="log">Logged in as: </p>
+        <p th:text="${loggedinuser.userName}"></p>
+    </div>
+</div>
     <button>
-        <a href="/signup">Sign Up</a>
+        <a href="/signup">Sign up</a>
     </button>
     <button>
-        <a href="/login">Login</a>
+        <a href="/login">Log in</a>
     </button>
     <button>
         <a href="/search">Search</a>

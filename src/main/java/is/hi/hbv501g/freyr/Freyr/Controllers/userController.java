@@ -50,8 +50,14 @@ public class userController {
      * @return redirects to home page
      */
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
-    public String signUpGET(User user){
-        return "signup";
+    public String signUpGET(User user, HttpSession session){
+        if(session.getAttribute("LoggedInUser") != null){
+            return "redirect:/";
+        }
+        else {
+            return "signup";
+        }
+
     }
 
     // sign up page
@@ -67,7 +73,7 @@ public class userController {
         if(exists == null){
             model.addAttribute("recipes",recipeService.findAll());
             userService.save(user);
-            return "home";
+            return "redirect:/";
         }
 
         model.addAttribute("message", message);
@@ -76,8 +82,14 @@ public class userController {
 
     // login page setup
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginGET(User user, Model model){
-        return "login";
+    public String loginGET(User user,  HttpSession session){
+
+        if(session.getAttribute("LoggedInUser") != null){
+            return "redirect:/";
+        }
+        else {
+            return "login";
+        }
     }
 
     // identifies the user if exists and returns to home page
@@ -96,7 +108,7 @@ public class userController {
             user = userService.findByUserName(user.getUserName());
             model.addAttribute("recipes",recipeService.findAll());
             session.setAttribute("LoggedInUser", user);
-            return "home";
+            return "redirect:/";
         }
 
         model.addAttribute("message", message);
@@ -154,6 +166,8 @@ public class userController {
             for(int i = 0; i < sessionUser.getFavorite().size(); i++){
                 if(sessionUser.getFavorite().get(i) == Integer.parseInt(remove)){
                     sessionUser.getFavorite().remove(i);
+                    model.addAttribute("recipes", null);
+                    model.addAttribute("loggedinuser", sessionUser);
                     userService.save(sessionUser);
                     return "/profile";
                 }
