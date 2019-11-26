@@ -37,8 +37,8 @@
         font-family: serif;
     }
 
-    textarea {
-        width: 50%;
+    #instructions {
+        width: 55%;
         height: 600px;
         font-family: serif;
     }
@@ -55,6 +55,10 @@
 
     .image {
         padding-top: 30px;
+    }
+
+    #already{
+
     }
 
 </style>
@@ -123,10 +127,6 @@
 
             <div th:switch="${message}">
                 <p class="alert" th:case="*" th:text="${message}"></p>
-            </div>
-
-            <div th:switch="${messageAlreadySaved}">
-                <p class="alert" th:case="*" th:text="${messageAlreadySaved}"></p>
             </div>
 
             <input type="submit" value="Add recipe to favorites"/>

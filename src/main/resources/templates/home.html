@@ -8,15 +8,28 @@
     p {
         width: 60%;
     }
+
+    #log{
+        font-weight: bold;
+    }
 </style>
 <body>
 <h1>Freyr</h1>
+<div th:switch="${loggedinuser}">
+
+    <h3 th:case="null"></h3>
+    <div th:case="*">
+        <p id="log">Logged in as: </p>
+        <p th:text="${loggedinuser.userName}"></p>
+    </div>
+
+</div>
 
     <button>
-        <a href="/signup">Sign Up</a>
+        <a href="/signup">Sign up</a>
     </button>
     <button>
-        <a href="/login">Login</a>
+        <a href="/login">Log in</a>
     </button>
     <button>
         <a href="/search">Search</a>
@@ -25,25 +38,6 @@
         <a href="/profile">Profile</a>
     </button>
 
-<p>we need to remove these buttons below</p>
-
-<!-- todo remove these buttons -->
-<!-- FROM HERE -->
-
-        <button>
-            <a href="/user">Users</a>
-        </button>
-        <button>
-            <a href="/loggedin">Logged In User</a>
-        </button>
-        <button>
-            <a href="/recipe">Recipe</a>
-        </button>
-        <button>
-            <a href="/favoriteRecipes">Favorite Recipe</a>
-        </button>
-
-<!-- TO HERE -->
 
 
 <h2>About the web application</h2>
@@ -52,8 +46,11 @@
 <p>
 Our team came up with this idea at out ﬁrst meeting. We thought of a couple of things to do but we all agreed this one was the best. Food waste is a huge issue in western society and the team thinks that this idea will help alot with that problem. This is something dear to the teams heart because this can have a great impact on the world. This also simpliﬁes cooking and preparing meals alot for the average Joe because the amount of planning and thinking is massively reduced with the features presented here above.
 </p>
-
-
+<form action="#" th:action="@{/}"  method="post">
+    <button name="logout" id ="logout">
+        Log out
+    </button>
+</form>
 <!-- todo remove this right?
 
 <div th:switch="${recipes}">

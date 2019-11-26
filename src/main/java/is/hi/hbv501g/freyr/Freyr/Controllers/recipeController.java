@@ -36,7 +36,12 @@ public class recipeController {
 
     // sets up the basic home page
     @RequestMapping("/")
-    public String Home(){
+    public String Home(Model model, HttpSession session){
+        if(session.getAttribute("LoggedInUser") != null){
+            model.addAttribute("loggedinuser",session.getAttribute("LoggedInUser"));
+            return "home";
+        }
+        model.addAttribute("loggedinuser", null);
         return "home";
     }
 
@@ -94,11 +99,11 @@ public class recipeController {
                 session.setAttribute("LoggedInUser", sessionUser);                      // update user favorites in session
             }
 
+
             Recipe exists = recServ.findById(recipe.getId());
             if (exists == null) {                                                       // if recipe does not exist in recipe database
                 recipe = recServ.save(recipe);                                          // add recipe to recipe database
             }
-
             // setup the recipe for html
             model.addAttribute("recipe", recipe);
         }
@@ -150,6 +155,7 @@ public class recipeController {
     public String Searched(){
         return "search";
     }
+
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     public String search(@RequestParam(required = false, value = "index") String
                                      index, @RequestParam(required = false, value = "foodType") String foodType, Model model) throws
@@ -159,13 +165,18 @@ public class recipeController {
 
         //recServ.getResults(foodType);
         if (foodType.length() > 0) {
-            model.addAttribute("recipes", recServ.getResults(foodType));
+            if(foodType.equals(recServ.getSearch())){
+                model.addAttribute("recipes",recServ.getListInUse());
+            }else{
+                model.addAttribute("recipes", recServ.getResults(foodType));
+            }
+            recServ.setSearch(foodType);
         }
 
         if (index != null) {
             System.out.println(index);
             recServ.setSelectedRecipe(Integer.parseInt(index));
-            if (recServ.getSelectedRecipe().getFullInfo() == false) {
+            if (recServ.getSelectedRecipe().getFullInfo() == false ) {
                 recServ.getDetails(recServ.getSelectedRecipe());
                 recServ.getSelectedRecipe().setFullInfo();
             }

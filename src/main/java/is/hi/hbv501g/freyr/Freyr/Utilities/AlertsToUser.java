@@ -20,6 +20,24 @@ public class AlertsToUser {
         return message;
     }
 
+    public String alreadyFav() {
+        // if user is logged in dont alert
+
+        // if user is not logged in alert
+        String message = "You already added this recipe to favorites";
+
+        return message;
+    }
+
+    public String wrongPassword() {
+        // if user is logged in dont alert
+
+        // if user is not logged in alert
+        String message = "Wrong password";
+
+        return message;
+    }
+
     public String messageSignup(User sessionUser) {
         // if user is logged in dont alert
         String message = "";

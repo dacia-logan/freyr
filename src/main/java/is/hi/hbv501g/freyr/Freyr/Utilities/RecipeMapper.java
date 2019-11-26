@@ -14,7 +14,7 @@ public class RecipeMapper {
 
     private String baseUri = "https://spoonacular.com/recipeImages/";
     private String ingrURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=";
-    private String titleURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=25&offset=0&type=main%20course&query=";
+    private String titleURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=30&offset=0&type=main%20course&query=";
     private String infoURL[] = {"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/", "/information"};
 
     // Fa lista af uppskriftum eftir hráefnum
@@ -46,6 +46,9 @@ public class RecipeMapper {
 
     // Fá lista eftir nafni
     public ArrayList<Recipe> getResultsTitle(String title/*, String type*/) throws UnirestException {
+
+        title = title.replaceAll("[ ]", "%20");
+        System.out.println(title);
 
         String response = this.request(this.titleURL+title);
 
@@ -92,12 +95,15 @@ public class RecipeMapper {
             object.setIndex(i);
             object.setTitle(element.getString("title"));
 
-            //Mismunandi hvort þarf að bæta við baseUri eða ekki
-            if(element.getString("image").contains("https")){
+            if(element.has("image")){
+                //Mismunandi hvort þarf að bæta við baseUri eða ekki
+                if(element.getString("image").contains("https") ){
                 object.setImage(element.getString("image"));
-            } else{
+                } else{
                 object.setImage(baseUri+element.getString("image"));
+                }
             }
+
 
             recipes.add(object);
         }

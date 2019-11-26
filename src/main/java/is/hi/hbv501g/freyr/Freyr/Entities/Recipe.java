@@ -114,7 +114,7 @@ public class Recipe {
 
     @Override
     public String toString(){
-        String s = "ID: "+this.id+"  Title: "+this.title+"  Image: "+this.image;
+        String s = "ID: "+this.id+"  Title: "+this.title;
         return s;
     }
 

@@ -17,8 +17,9 @@ public class RecipeServiceImplementation implements RecipeService {
 
     RecipeRepository recipeRepo;
     RecipeMapper mapper = new RecipeMapper();
-    List<Recipe> results = new ArrayList<Recipe>();
+    List<Recipe> listInUse = new ArrayList<Recipe>();
     Recipe selectedRecipe;
+    String search = "";
 
     @Autowired
     public RecipeServiceImplementation(RecipeRepository recipeRepo) {
@@ -29,7 +30,6 @@ public class RecipeServiceImplementation implements RecipeService {
     public Recipe save(Recipe recipe) {
         return recipeRepo.save(recipe);
     }
-
 
     @Override
     public void delete(Recipe recipe) {
@@ -51,16 +51,17 @@ public class RecipeServiceImplementation implements RecipeService {
     public ArrayList<Recipe> findByUserId(Integer id){ return  recipeRepo.findByUserId(id);}*/
 
 
+
     @Override
     public ArrayList<Recipe> getResults(String title) throws UnirestException {
-        this.results = mapper.getResultsTitle(title);
-        return (ArrayList<Recipe>) this.results;
+        this.listInUse = mapper.getResultsTitle(title);
+        return (ArrayList<Recipe>) this.listInUse;
     }
 
 
     @Override
     public void setSelectedRecipe(int i) {
-        this.selectedRecipe = this.results.get(i);
+        this.selectedRecipe = this.listInUse.get(i);
     }
 
     @Override
@@ -71,5 +72,19 @@ public class RecipeServiceImplementation implements RecipeService {
     @Override
     public void getDetails(Recipe recipe) throws UnirestException {
         this.mapper.getDetails(recipe);
+    }
+
+    @Override
+    public void setSearch(String s){
+        this.search=s;
+    }
+
+    @Override
+    public String getSearch(){
+        return this.search;
+    }
+
+    public ArrayList<Recipe> getListInUse(){
+        return (ArrayList<Recipe>) this.listInUse;
     }
 }
