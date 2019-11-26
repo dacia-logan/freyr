@@ -2,22 +2,25 @@ package is.hi.hbv501g.freyr.Freyr.Entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     private String userName;
     private String email;
     private String password;
 
-    //@OneToMany(mappedBy = "user")
-    private ArrayList<Recipe> favorite = new ArrayList<>();
+    //@ManyToMany
+    //@JoinTable(name = "fav_recipes", joinColumns = @JoinColumn(name = "users_id"), inverseJoinColumns = @JoinColumn(name = "recipe_id"))
+    private ArrayList<Integer> favorite = new ArrayList<>();
 
-    public User(long id, String userName, String email, String password, ArrayList<Recipe> favorite) {
+    public User(Integer id, String userName, String email, String password, ArrayList<Integer> favorite) {
         this.id = id;
         this.userName = userName;
         this.email = email;
@@ -25,7 +28,7 @@ public class User {
         this.favorite = favorite;
     }
 
-    public User(long id, String userName, String email, String password) {
+    public User(Integer id, String userName, String email, String password) {
         this.id = id;
         this.userName = userName;
         this.email = email;
@@ -34,11 +37,11 @@ public class User {
 
     public User() {}
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -66,12 +69,16 @@ public class User {
         this.password = password;
     }
 
-    public ArrayList<Recipe> getFavorite() {
+
+    public ArrayList<Integer> getFavorite() {
         return favorite;
     }
 
-    public void setFavorite(ArrayList<Recipe> favorite) {
+    public void setFavorite(ArrayList<Integer> favorite) {
         this.favorite = favorite;
     }
 
+    public void addToFavorite(Integer id) {
+        favorite.add(id);
+    }
 }

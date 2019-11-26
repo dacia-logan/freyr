@@ -6,8 +6,17 @@
 </head>
 
 <style>
+    body {
+        font-family: serif;
+    }
+
     table {
         border-collapse: collapse;
+    }
+
+    .alert {
+        font-size: small;
+        font-style: italic;
     }
 
     td, th {
@@ -17,19 +26,21 @@
     }
 
     #title {
-        font-size: x-large;
+        font-size: xx-large;
         font-weight: bold;
         padding-bottom: 30px;
     }
 
     #ingred, #instruct {
-        font-size: large;
+        font-size: x-large;
         font-weight: bold;
+        font-family: serif;
     }
 
-    textarea {
-        width: 50%;
-        height: max-content;
+    #instructions {
+        width: 55%;
+        height: 600px;
+        font-family: serif;
     }
 
     .noBorders {
@@ -38,10 +49,16 @@
         border-left-style: hidden;
         border-bottom-style: hidden;
         outline: none;
+        font-family: serif;
+        width: max-content;
     }
 
     .image {
         padding-top: 30px;
+    }
+
+    #already{
+
     }
 
 </style>
@@ -70,23 +87,17 @@
                    readonly>
             <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
 
-            <br>
-
-            <label for="rating">Rating</label>
-            <input class="noBorders" type="text" th:field="*{rating}" id="rating" th:placeholder="${recipe.rating}"
-                   readonly>
-            <span th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}"></span>
 
             <br>
 
-            <label for="servings">Servings</label>
+            <label for="servings">Servings: </label>
             <input class="noBorders" type="text" th:field="*{servings}" id="servings"
                    th:placeholder="${recipe.servings}" readonly>
             <span th:if="${#fields.hasErrors('servings')}" th:errors="*{servings}"></span>
 
             <br>
 
-            <label for="readyInMinutes">Preperation time</label>
+            <label for="readyInMinutes">Preperation time: </label>
             <input class="noBorders" type="text" th:field="*{readyInMinutes}" id="readyInMinutes"
                    th:placeholder="${recipe.readyInMinutes}" readonly>
             <span th:if="${#fields.hasErrors('readyInMinutes')}" th:errors="*{readyInMinutes}"></span>
@@ -94,25 +105,29 @@
             <br>
 
             <input class="image" type="image" th:field="*{image}" id="image" width="300px"
-                   src="https://images.pexels.com/photos/2765875/pexels-photo-2765875.jpeg?cs=srgb&dl=baked-close-up-creamy-2765875.jpg&fm=jpg"
+                   th:src="${recipe.image}"
                    readonly>
             <span th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></span>
 
             <br>
-
-            <p id="ingred">Ingredients</p>
-            <p th:text="${recipe.ingredients}" th:field="*{ingredients}" id="ingredients"></p>
-            <!-- <span th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}"></span> -->
-
+            <p >Ingredients</p>
+            <p th:text="${recipe.ingredients}" th:field="*{ingredients}" id="ingredients" hidden></p>
+            <ul th:each="ingred : ${recipe.ingredients}" >
+                <li th:text="${ingred}"></li>
+            </ul>
             <br>
 
             <p id="instruct">Instructions</p>
             <textarea class="noBorders" th:field="*{instructions}" id="instructions"
-                      th:text="${recipe.instructions}"></textarea>
+                      th:text="${recipe.instructions}" readonly></textarea>
             <span th:if="${#fields.hasErrors('instructions')}" th:errors="*{instructions}"></span>
 
             <br>
             <br>
+
+            <div th:switch="${message}">
+                <p class="alert" th:case="*" th:text="${message}"></p>
+            </div>
 
             <input type="submit" value="Add recipe to favorites"/>
 

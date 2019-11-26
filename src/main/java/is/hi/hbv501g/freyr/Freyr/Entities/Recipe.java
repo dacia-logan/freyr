@@ -2,39 +2,55 @@ package is.hi.hbv501g.freyr.Freyr.Entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "RECIPE")
+@Table(name = "recipe")
 public class Recipe {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
+    private Integer id;
+    private String index;
     private String title;
+    @Column(columnDefinition = "VARCHAR(100000)")   // make sure the column is big enough
     private String instructions;
     private double rating;
     private String image;
     private int readyInMinutes;
     private int servings;
+    @Column(columnDefinition = "VARCHAR(100000)")   // make sure the column is big enough
     private ArrayList<String> ingredients = new ArrayList<String>();
-    // private ArrayList<Recipe> favorite; //á þetta nokkuð að vera hér?
-
-    // ------------------- Constructor ----------------------------
-
+    private boolean fullInfo = false;
     public Recipe() {
     }
 
-    public Recipe(String title, int id, String image) {
+    public Recipe(String title, Integer id, String image) {
         this.title = title;
         this.id = id;
         this.image = image;
     }
 
-    public int getId() {
+    public void setFullInfo(){
+        this.fullInfo=true;
+    }
+
+    public boolean getFullInfo(){
+        return this.fullInfo;
+    }
+
+    public String getIndex() {
+        return this.index;
+    }
+
+    public void setIndex(int i) {
+        this.index = ""+i;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -88,15 +104,6 @@ public class Recipe {
 
     }
 
-
-   /* public int getIngredientsMiss() {
-        return ingredientsMiss;
-    }
-
-    public void setIngredientsMiss(int ingredientsMiss) {
-        this.ingredientsMiss = ingredientsMiss;
-
-    }*/
     public void setIngredients(String ingredients) {
         this.ingredients.add(ingredients);
     }
@@ -107,7 +114,8 @@ public class Recipe {
 
     @Override
     public String toString(){
-        String s = "ID: "+this.id+"  Title: "+this.title+"  Image: "+this.image;
+        String s = "ID: "+this.id+"  Title: "+this.title;
         return s;
     }
+
 }

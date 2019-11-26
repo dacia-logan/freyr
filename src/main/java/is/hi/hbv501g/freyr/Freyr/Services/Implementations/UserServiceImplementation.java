@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImplementation implements UserService {
@@ -58,10 +59,22 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
+    public User updateFavorite(User user, Integer recipeId) {
+        User exists = userRepo.findByUserName(user.getUserName());
+        if(exists != null){
+            exists.getFavorite().add(recipeId);
+            userRepo.save(exists);
+            return exists;
+        }
+
+        return null;
+    }
+
+    /*@Override
     public ArrayList<Recipe> getFavorites(String title) {
         // todo útfæra þetta
         return null;
-    }
+    }*/
 
     @Override
     public List<User> findAll() {

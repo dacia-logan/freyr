@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Freyr</title>
+    <style>
+        #title{
+            font-size: 15;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+<h1>Freyr</h1>
+
+<div>
+    <button>
+        <a href="/">Home</a>
+    </button>
+</div>
+
+<h2>Search by ingredients</h2>
+<form action="#" th:action="@{/ingredientSearch}"  method="post">
+    <div>
+        <h3>Vegtables</h3>
+        <div th:name="vegtables">
+            <ul th:each="vegt : ${vegtables}">
+                <input type="checkbox" th:field="*{vegtables}" th:value="${vegt}" />
+                <label th:text="${vegt}"></label>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h3>Vegtables</h3>
+        <ul th:each="fruit : ${fruits}">
+            <input type="checkbox" th:field="*{fruits}" th:value="${fruit}" />
+            <label th:text="${fruit}"></label>
+        </ul>
+    </div>
+    <input type="submit" value="IngredientSearch"/>
+</form>
+</body>
+</html>
