@@ -5,6 +5,7 @@ import is.hi.hbv501g.freyr.Freyr.Entities.Recipe;
 import is.hi.hbv501g.freyr.Freyr.Entities.User;
 import is.hi.hbv501g.freyr.Freyr.Services.RecipeService;
 import is.hi.hbv501g.freyr.Freyr.Services.UserService;
+import is.hi.hbv501g.freyr.Freyr.Utilities.addListsToModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,10 +17,9 @@ import is.hi.hbv501g.freyr.Freyr.Utilities.AlertsToUser;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 @Controller
 public class recipeController {
@@ -151,8 +151,22 @@ public class recipeController {
         return "/favoriteRecipes";
     }
 
+    @RequestMapping(value="ingredientSearch", method=RequestMethod.GET)
+    public String ingredientSearch(Model model){
+        addListsToModel.ingredientsToModel(model);
+        return "ingredientSearch";
+    }
+
+    @RequestMapping(value="ingredientSearch", method=RequestMethod.POST)
+    public String IngredientSearch(@RequestParam(required = false, value = "vegtables") String vegtables, Model model){
+        addListsToModel.ingredientsToModel(model);
+        System.out.println(vegtables);
+        return "ingredientSearch";
+    }
+
     @RequestMapping(value="search", method=RequestMethod.GET)
-    public String Searched(){
+    public String Searched(Model model){
+        addListsToModel.mealKindsToModel(model);
         return "search";
     }
 
