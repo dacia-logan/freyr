@@ -62,35 +62,36 @@
         </div>
 
     </div>
-    <input type="submit" value="IngredientSearch"/>
-
-    <div th:switch="${recipes}">
-        <h1>Recipes</h1>
-        <h2 th:case="null">No results!</h2>
-        <div th:case="*">
-            <table>
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <!-- <th>favorites</th>-->
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="recipe : ${recipes}">
-                    <td id="title" th:text="${recipe.title}"></td>
-                    <td><img th:src="${recipe.image}", width="300px" height="300px"></td>
-                    <td>
-                        <button  name="index" id ="index" th:value="${recipe.index}"/><!--<a href="/recipe">-->Look At Recipe</button><!--</a>-->
-                    </td>
-                    <!--<button><a href="/recipe" value = "${recipe.index}">Skoða</a></button></td>-->
-                    <!--   <button>
-                           <a href="/recipe">Recipe</a>
-                       </button> -->
-                </tr>
-                </tbody>
-            </table>
-        </div>
+    <div>
+        <input type="submit" value="IngredientSearch"/>
     </div>
 </form>
+<div th:switch="${recipes}">
+    <h1>Recipes</h1>
+    <h2 th:case="null">No results!</h2>
+    <div th:case="*">
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <!-- <th>favorites</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="recipe : ${recipes}">
+                <td id="title" th:text="${recipe.title}"></td>
+                <td><img th:src="${recipe.image}", width="300px" height="300px"></td>
+                <td>
+                    <button  name="index" id ="index" th:value="${recipe.index}"/><!--<a href="/recipe">-->Look At Recipe</button><!--</a>-->
+                </td>
+                <!--<button><a href="/recipe" value = "${recipe.index}">Skoða</a></button></td>-->
+                <!--   <button>
+                       <a href="/recipe">Recipe</a>
+                   </button> -->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>

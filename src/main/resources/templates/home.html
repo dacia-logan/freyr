@@ -24,7 +24,17 @@
     </div>
 
 </div>
-
+<div>
+    <h2>Search:</h2>
+    <button>
+        <a href="/search">Search by title and type</a>
+    </button>
+    <button>
+        <a href="/ingredientSearch">Search by ingredients</a>
+    </button>
+</div>
+<div>
+    <h2>Manage account</h2>
     <button>
         <a href="/signup">Sign up</a>
     </button>
@@ -32,14 +42,9 @@
         <a href="/login">Log in</a>
     </button>
     <button>
-        <a href="/search">Search</a>
-    </button>
-    <button>
         <a href="/profile">Profile</a>
     </button>
-    <button>
-        <a href="/ingredientSearch">IngredientSearch</a>
-    </button>
+</div>
 
 
 <h2>About the web application</h2>
@@ -53,32 +58,6 @@ Our team came up with this idea at out ﬁrst meeting. We thought of a couple of
         Log out
     </button>
 </form>
-<!-- todo remove this right?
-
-<div th:switch="${recipes}">
-    <h2 th:case="null">No recipes yet!</h2>
-    <div th:case="*">
-        <h2>Recipes</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Rating</th>
-            </tr>
-            </thead>
-           <tbody>
-            <tr th:each="results : ${recipes}">
-                <td th:text="${results.title}"></td>
-                <td th:text="${results.description}"></td>
-                <td th:text="${results.rating}"></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
--->
 
 </body>
 </html>

@@ -30,6 +30,8 @@ public class RecipeMapper {
                     ingredients+=ingr.get(i);
                 }
                 else {
+                    String ingredient = ingr.get(i);
+                    ingredient = ingredient.replaceAll("[ ]", "%20");
                     ingredients += ingr.get(i) + ",";
                 }
             }
@@ -77,7 +79,6 @@ public class RecipeMapper {
             recipe.setIngredients(ingr.getJSONObject(i).getString("original"));
         }
         System.out.println(recipe.getIngredients().size());
-
 
         return recipe;
     }
