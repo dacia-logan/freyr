@@ -4,23 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Signup</title>
+    <link rel="stylesheet" href="homeStyle.css">
 </head>
 
 <body>
 
 <h1>Sign Up</h1>
+<div class="takkar">
+    <button class="button">
+        <a href="/"><span>Home</span></a>
+    </button>
 
-<button>
-    <a href="/">Home</a>
-</button>
-
-<button>
-    <a href="/login">Login</a>
-</button>
-
+    <button class="button">
+        <a href="/login"><span>Login</span></a>
+    </button>
+<div/>
 <h2>Please fill in this form to create an account</h2>
 
-<div>
+<div class="form">
     <form action="#" th:action="@{/signup}" th:object="${user}" method="post">
         User Name: <br>
         <input type="text" name="userName" id="userName" th:field="*{userName}"/><br>
@@ -28,7 +29,7 @@
         <input type="text" name="password" id="password" th:value="*{password}"/><br>
         Email: <br>
         <input type="text" name="email" id="email" th:value="*{email}"/><br>
-        <input type="submit" value="Sign up"/>
+        <input class="button" type="submit" value="Sign up"/>
     </form>
 </div>
 

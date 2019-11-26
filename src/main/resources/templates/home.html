@@ -2,56 +2,79 @@
 <html xmlns:th="https://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="homeStyle.css">
     <title>Freyr</title>
 </head>
 <body>
 <h1>Freyr</h1>
-    <button>
-        <a href="/signup">Sign Up</a>
-    </button>
-    <button>
-        <a href="/login">Login</a>
-    </button>
-    <button>
-        <a href="/user">Users</a>
-    </button>
-    <button>
-        <a href="/loggedin">Logged In User</a>
-    </button>
-    <button>
-        <a href="/search">Search</a>
-    </button>
-    <button>
-        <a href="/recipe">Recipe</a>
-    </button>
-    <button>
-        <a href="/favoriteRecipes">Favorite Recipe</a>
-    </button>
-
-
-<div th:switch="${recipes}">
-    <h2 th:case="null">No recipes yet!</h2>
-    <div th:case="*">
-        <h2>Recipes</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Rating</th>
-            </tr>
-            </thead>
-           <!-- <tbody>
-            <tr th:each="results : ${recipes}">
-                <td th:text="${results.title}"></td>
-                <td th:text="${results.description}"></td>
-                <td th:text="${results.rating}"></td>
-            </tr>
-            </tbody> -->
-        </table>
+    <div class="takkar">
+        <button class="button" style="vertical-align:middle">
+            <a href="/signup.html"><span>Sign Up</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/login.html"><span>Login</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/user.html"><span>Users</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/loggedin.html"><span>Profile</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/search.html"><span>Search</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/recipe.html"><span>Recipe</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/favoriteRecipes.html"><span>Favorites</span></a>
+        </button>
     </div>
 
-</div>
 
+    <div class="myndir">
+        <a target="_blank" href="pastarettur.jpg">
+            <img src="pastarettur.jpg" alt="Mountains" width="800" height="1200">
+        </a>
+    </div>
+
+    <div class="myndir">
+        <a target="_blank" href="Lobster-Tails-with-Garlic-Lemon-Butter-3.jpg">
+            <img src="Lobster-Tails-with-Garlic-Lemon-Butter-3.jpg" alt="Mountains" width="1200" height="1800">
+        </a>
+    </div>
+    <div class="myndir">
+        <a target="_blank" href="Chinese-style-Pumpkin-Omelette-8.jpg">
+            <img src="Chinese-style-Pumpkin-Omelette-8.jpg" alt="Mountains" width="680" height="1020">
+        </a>
+    </div>
+    <div class="myndir">
+        <a target="_blank" href="indian.jpeg">
+            <img src="indian.jpeg" alt="Mountains" width="800" height="1200">
+        </a>
+    </div>
+
+    <div class="myndir">
+        <a target="_blank" href="pizza.jpg">
+            <img src="pizza.jpg" alt="Mountains" width="1000" height="1500">
+        </a>
+    </div>
+
+    <div class="myndir">
+        <a target="_blank" href="lasagnef.jpg">
+            <img src="lasagnef.jpg" alt="Mountains" width="1900" height="2850">
+        </a>
+    </div>
+    <div class="myndir">
+        <a target="_blank" href="kjulli.jpg">
+            <img src="kjulli.jpg" alt="Mountains" width="1400" height="2097">
+        </a>
+    </div>
+
+    <div class="myndir">
+        <a target="_blank" href="holt.jpg">
+            <img src="holt.jpg" alt="Mountains" width="700" height="1050">
+        </a>
+    </div>
 </body>
 </html>
