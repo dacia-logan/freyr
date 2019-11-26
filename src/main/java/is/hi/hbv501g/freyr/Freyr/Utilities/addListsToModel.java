@@ -8,7 +8,7 @@ import java.util.List;
 
 public class addListsToModel {
     public static void ingredientsToModel(Model model){
-        List<String> vegtableListTemp = Arrays.asList( "tomato", "lettuce", "cucumber", "bell pepper", "mushrooms");
+        List<String> vegtableListTemp = Arrays.asList( "tomato", "lettuce", "cucumber", "bell pepper", "mushrooms", "artichoke", "eggplant");
         ArrayList<String> vegtableList = new ArrayList<String>();
         vegtableList.addAll(vegtableListTemp);
         model.addAttribute("vegtables", vegtableList);

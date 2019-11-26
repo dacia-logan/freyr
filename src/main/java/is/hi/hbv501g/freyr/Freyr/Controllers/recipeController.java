@@ -9,12 +9,14 @@ import is.hi.hbv501g.freyr.Freyr.Utilities.addListsToModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.validation.BindingResult;
 import is.hi.hbv501g.freyr.Freyr.Utilities.AlertsToUser;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -158,13 +160,12 @@ public class recipeController {
     }
 
     @RequestMapping(value="ingredientSearch", method=RequestMethod.POST)
-    public String IngredientSearch(@RequestParam(required = false, value = "vegtables") String vegtables, Model model){
+    public String IngredientSearch(@RequestParam(name = "mealKinds", required = false)String[] vegtables, Model model){
         addListsToModel.ingredientsToModel(model);
-        System.out.println(vegtables);
         return "ingredientSearch";
     }
 
-    @RequestMapping(value="search", method=RequestMethod.GET)
+    @RequestMapping(value="/search", method=RequestMethod.GET)
     public String Searched(Model model){
         addListsToModel.mealKindsToModel(model);
         return "search";
@@ -172,17 +173,21 @@ public class recipeController {
 
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     public String search(@RequestParam(required = false, value = "index") String
-                                     index, @RequestParam(required = false, value = "foodType") String foodType, Model model) throws
+                                     index, @RequestParam(required = false, value = "foodType") String foodType, @RequestParam(name = "mealKinds", required = false)String mealKind, Model model) throws
             UnirestException {
         //todo Tekur við því sem notandinn slær inn og sendir það á mapperinn
         //todo Hægt að commenta þetta út á þá má sjá uppskriftina prenntast út á skipanalínu
 
-        //recServ.getResults(foodType);
+        System.out.println(mealKind);
+
+        recServ.getResultsSimple(foodType, mealKind);
+        addListsToModel.mealKindsToModel(model);
+
         if (foodType.length() > 0) {
             if(foodType.equals(recServ.getSearch())){
                 model.addAttribute("recipes",recServ.getListInUse());
             }else{
-                model.addAttribute("recipes", recServ.getResults(foodType));
+                model.addAttribute("recipes", recServ.getResultsSimple(foodType, mealKind));
             }
             recServ.setSearch(foodType);
         }

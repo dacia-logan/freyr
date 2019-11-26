@@ -45,8 +45,8 @@ public class RecipeMapper {
     }
 
     // Fá lista eftir nafni
-    public ArrayList<Recipe> getResultsTitle(String title/*, String type*/) throws UnirestException {
-
+    public ArrayList<Recipe> getResultsTitleType(String title, String type) throws UnirestException {
+        System.out.println(type);
         title = title.replaceAll("[ ]", "%20");
         System.out.println(title);
 
