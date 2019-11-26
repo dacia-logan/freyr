@@ -56,6 +56,12 @@ public class RecipeServiceImplementation implements RecipeService {
         return (ArrayList<Recipe>) this.listInUse;
     }
 
+    public ArrayList<Recipe> getResultsIngredients(ArrayList<String> ingredients) throws UnirestException {
+        this.listInUse = mapper.getResultsIngr(ingredients);
+        return (ArrayList<Recipe>) this.listInUse;
+
+    }
+
 
     @Override
     public void setSelectedRecipe(int i) {

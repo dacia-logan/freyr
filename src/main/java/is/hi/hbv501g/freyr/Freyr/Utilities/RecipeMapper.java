@@ -30,7 +30,7 @@ public class RecipeMapper {
                     ingredients+=ingr.get(i);
                 }
                 else {
-                    ingredients += ingr.get(i) + "%2C";
+                    ingredients += ingr.get(i) + ",";
                 }
             }
         }
