@@ -12,7 +12,8 @@ public interface RecipeService {
     Recipe findById(Integer id);
     ArrayList<Recipe> findAll();
     //ArrayList<Recipe> findByUserId(Integer id);
-    ArrayList<Recipe> getResults(String title) throws UnirestException;
+    ArrayList<Recipe> getResultsSimple(String title, String type) throws UnirestException;
+    ArrayList<Recipe> getResultsIngredients(ArrayList<String> ingredients) throws UnirestException;
     void getDetails(Recipe recipe) throws UnirestException;
     void setSelectedRecipe(int i);
     Recipe getSelectedRecipe();
