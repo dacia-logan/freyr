@@ -29,20 +29,7 @@
         <input type="text" name="password" id="password" th:value="*{password}"/><br>
         Email: <br>
         <input type="text" name="email" id="email" th:value="*{email}"/><br>
-        <input class="button" type="submit" value="Sign up"/>
-            <label>User Name: </label>
-        <br>
-            <input type="text" name="userName" id="userName" th:field="*{userName}" required/>
-        <br>
-            <label>Password: </label>
-        <br>
-            <input type="password" name="password" id="password" th:value="*{password}" required/>
-        <br>
-            <label>Email: </label>
-        <br>
-            <input type="text" name="email" id="email" th:value="*{email}" required/>
-        <br>
-
+        
         <div th:switch="${message}">
             <p class="alert" th:case="*" th:text="${message}"></p>
         </div>
