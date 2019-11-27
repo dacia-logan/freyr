@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Recipe information</title>
-    <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="https://notendur.hi.is/~hfg7/freyr2/src/main/resources/templates/homeStyle.css">
 </head>
 
 <style>
@@ -33,7 +33,7 @@
     }
 
     #ingred, #instruct {
-        font-size: x-large;
+        font-size: 27px;
         font-weight: bold;
         font-family: serif;
     }
@@ -42,6 +42,7 @@
         width: 55%;
         height: 600px;
         font-family: serif;
+        font-size: 27px;
     }
 
     .noBorders {
@@ -56,6 +57,9 @@
 
     .image {
         padding-top: 30px;
+    }
+    label {
+        color: black;
     }
 
     #already{
@@ -74,13 +78,13 @@
     </button>
 </div>
 
-<div th:switch="${recipe}">
+<div class="upps" th:switch="${recipe}">
 
     <h1 th:case="null">No recipe yet!</h1>
 
     <div th:case="*">
 
-        <form action="#" th:action="@{/recipe}" th:object="${recipe}" method="post">
+        <form class="upp" action="#" th:action="@{/recipe}" th:object="${recipe}" method="post">
 
             <br>
 
@@ -91,15 +95,15 @@
 
             <br>
 
-            <label for="servings">Servings: </label>
-            <input class="noBorders" type="text" th:field="*{servings}" id="servings"
+            <label class="hae" for="servings">Servings: </label>
+            <input class="noBorders1" type="text" th:field="*{servings}" id="servings"
                    th:placeholder="${recipe.servings}" readonly>
             <span th:if="${#fields.hasErrors('servings')}" th:errors="*{servings}"></span>
 
             <br>
 
             <label for="readyInMinutes">Preperation time: </label>
-            <input class="noBorders" type="text" th:field="*{readyInMinutes}" id="readyInMinutes"
+            <input class="noBorders2" type="text" th:field="*{readyInMinutes}" id="readyInMinutes"
                    th:placeholder="${recipe.readyInMinutes}" readonly>
             <span th:if="${#fields.hasErrors('readyInMinutes')}" th:errors="*{readyInMinutes}"></span>
 
@@ -111,8 +115,8 @@
             <span th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></span>
 
             <br>
-            <p >Ingredients</p>
-            <p th:text="${recipe.ingredients}" th:field="*{ingredients}" id="ingredients" hidden></p>
+            <p class="svart">Ingredients</p>
+            <p class="svart" th:text="${recipe.ingredients}" th:field="*{ingredients}" id="ingredients" hidden></p>
             <ul th:each="ingred : ${recipe.ingredients}" >
                 <li th:text="${ingred}"></li>
             </ul>
@@ -130,7 +134,7 @@
                 <p class="alert" th:case="*" th:text="${message}"></p>
             </div>
 
-            <input type="submit" value="Add recipe to favorites"/>
+            <input class="button" type="submit" value="Add recipe to favorites"/>
 
         </form>
 

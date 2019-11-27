@@ -4,23 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Change Password</title>
+    <link rel="stylesheet" href="https://notendur.hi.is/~hfg7/freyr2/src/main/resources/templates/homeStyle.css">
 </head>
 
 <body>
 
-<style>
-    .alert {
-        font-size: small;
-        font-style: italic;
-    }
-</style>
 
 <h1>Sign Up</h1>
-
-<button>
-    <a href="/">Home</a>
-</button>
-
+<div class="takkar">
+    <button class="button">
+        <a href="/"><span>Home</span></a>
+    </button>
+</div>
 
 
 <h2>Please fill in this form to create an account</h2>
@@ -38,11 +33,11 @@
 
         <label>New Password: </label>
         <br>
-        <input type="password" name="npassword" id="npassword" required/>
+        <input  type="password" name="npassword" id="npassword" required/>
         <br>
 
 
-        <input type="submit" value="Change Password"/>
+        <input class="button" type="submit" value="Change Password"/>
     </form>
 </div>
 

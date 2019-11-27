@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Freyr</title>
-    <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="https://notendur.hi.is/~hfg7/freyr2/src/main/resources/templates/homeStyle.css">
 </head>
 <body>
 <h1>Freyr</h1>
@@ -24,7 +24,7 @@
 
         <label th:text="${mealK}"></label>
     </div>
-    <input type="submit" value="Search"/>
+    <input class="button" type="submit" value="Search"/>
 
     <div th:switch="${recipes}">
         <h1>Recipes</h1>
@@ -42,7 +42,7 @@
                     <td id="title" th:text="${recipe.title}"></td>
                     <td><img th:src="${recipe.image}" width="300px" height="300px"></td>
                     <td>
-                        <button  name="index" id ="index" th:value="${recipe.index}"/>Look At Recipe</button>
+                        <button class="button" name="index" id ="index" th:value="${recipe.index}"/>Look At Recipe</button>
                     </td>
                 </tr>
                 </tbody>
