@@ -27,17 +27,27 @@ public class RecipeMapper {
         else {
             for (int i = 0; i < ingr.size(); i++) {
                 if (i == ingr.size()-1){
-                    ingredients+=ingr.get(i);
+                    String ingredient = ingr.get(i);
+                    if(i != ingr.size()-1) {
+                        ingredients += ingredient+"%2C";
+                    }
+                    else {
+                        ingredients += ingredient;
+                    }
+                        //ingredients+=ingredient;
                 }
-                else {
-                    ingredients += ingr.get(i) + "%2C";
-                }
+                /*else {
+                    String ingredient = ingr.get(i);
+                    ingredient = ingredient.replaceAll("[ ]", "%20");
+                    System.out.println(ingredient);
+                    ingredients += ingredient + ",";
+                }*/
             }
         }
 
         // GET request
         String response = this.request(this.ingrURL+ingredients);
-        System.out.println(response);
+        System.out.println("MAPPER"+response);
 
         ArrayList<Recipe> recipes = this.resultsToRecipe("{results :"+response+"}");
         System.out.println(recipes.get(0).toString());
@@ -45,8 +55,8 @@ public class RecipeMapper {
     }
 
     // Fá lista eftir nafni
-    public ArrayList<Recipe> getResultsTitle(String title/*, String type*/) throws UnirestException {
-
+    public ArrayList<Recipe> getResultsTitleType(String title, String type) throws UnirestException {
+        System.out.println(type);
         title = title.replaceAll("[ ]", "%20");
         System.out.println(title);
 
@@ -77,7 +87,6 @@ public class RecipeMapper {
             recipe.setIngredients(ingr.getJSONObject(i).getString("original"));
         }
         System.out.println(recipe.getIngredients().size());
-
 
         return recipe;
     }

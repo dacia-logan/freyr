@@ -8,6 +8,7 @@
 <body>
 <h1>Freyr</h1>
 
+
     <div th:switch="${loggedinuser}">
 
         <h3 th:case="null"></h3>
@@ -15,6 +16,30 @@
             <p id="log">Logged in as: </p>
             <p th:text="${loggedinuser.userName}"></p>
         </div>
+
+</div>
+<div>
+    <h2>Search:</h2>
+    <button>
+        <a href="/search">Search by title and type</a>
+    </button>
+    <button>
+        <a href="/ingredientSearch">Search by ingredients</a>
+    </button>
+</div>
+<div>
+    <h2>Manage account</h2>
+    <button>
+        <a href="/signup">Sign up</a>
+    </button>
+    <button>
+        <a href="/login">Log in</a>
+    </button>
+    <button>
+        <a href="/profile">Profile</a>
+    </button>
+</div>
+
 
     </div>
     <div class="takkar">

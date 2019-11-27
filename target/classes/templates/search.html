@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="https://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Freyr</title>
     <style>
         #title{
@@ -23,41 +23,37 @@
 <h2>Search for recipies</h2>
 <form action="#" th:action="@{/search}"  method="post">
     <input type="text" name="foodType" id="foodType" th:value="${foodType}"/>
-    <h3>Coose to increase accuracy:</h3>
-    <ul th:each="mealK : ${mealKinds}">
-        <input type="checkbox" th:field="*{mealKinds}" th:value="${mealK}" />
+    <h3>Choose kind:</h3>
+    <div th:each="mealK:${mealKinds}">
+        <input type="radio" name="mealKinds" th:value="${mealK}"/>
         <label th:text="${mealK}"></label>
-    </ul>
-    <input type="submit" value="Search"/>
-</form>
-
-<div th:switch="${recipes}">
-    <h1>Recipes</h1>
-    <h2 th:case="null">No results!</h2>
-    <div th:case="*">
-        <table>
-            <thead>
-            <tr>
-                <th>Title</th>
-                <!-- <th>favorites</th>-->
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="recipe : ${recipes}">
-                <td id="title" th:text="${recipe.title}"></td>
-                <td><img th:src="${recipe.image}", width="300px" height="300px"></td>
-                <td>
-                    <button  name="index" id ="index" th:value="${recipe.index}"/><!--<a href="/recipe">-->Look At Recipe</button><!--</a>-->
-                </td>
-                <!--<button><a href="/recipe" value = "${recipe.index}">Skoða</a></button></td>-->
-                <!--   <button>
-                       <a href="/recipe">Recipe</a>
-                   </button> -->
-            </tr>
-            </tbody>
-        </table>
     </div>
-</div>
+    <input type="submit" value="Search"/>
+
+    <div th:switch="${recipes}">
+        <h1>Recipes</h1>
+        <h2 th:case="null">No results!</h2>
+        <div th:case="*">
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="recipe : ${recipes}">
+                    <td id="title" th:text="${recipe.title}"></td>
+                    <td><img th:src="${recipe.image}" width="300px" height="300px"></td>
+                    <td>
+                        <button  name="index" id ="index" th:value="${recipe.index}"/>Look At Recipe</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</form>
 
 </body>
 </html>
