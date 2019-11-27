@@ -2,30 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31781dd9-ef25-4a42-b9f8-8c39c82b0ec4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/freyr2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/BackgroundGreen.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Chinese-style-Pumpkin-Omelette-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Lobster-Tails-with-Garlic-Lemon-Butter-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/holt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/homeStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/indian.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/kjulli.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/lasagnef.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/pastarettur.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/pizza.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/BackgroundGreen.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/Chinese-style-Pumpkin-Omelette-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/Lobster-Tails-with-Garlic-Lemon-Butter-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/holt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/homeStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/indian.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/kjulli.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/lasagnef.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/pastarettur.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/pizza.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/freyr2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/freyr2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
@@ -39,40 +19,26 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/addListsToModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/addListsToModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/favoriteRecipes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/favoriteRecipes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/homeStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/homeStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ingredientSearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ingredientSearch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/lasagne.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/recipe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/settings.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/userController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/FreyrApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/FreyrApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Repositories/RecipeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Repositories/RecipeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Repositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/Implementations/RecipeServiceImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/Implementations/RecipeServiceImplementation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/AlertsToUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/AlertsToUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/addListsToModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/addListsToModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/favoriteRecipes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/favoriteRecipes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/homeStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/homeStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/ingredientSearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ingredientSearch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/lasagne.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/recipe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/settings.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/is/hi/hbv501g/freyr/Freyr/FreyrApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/is/hi/hbv501g/freyr/Freyr/FreyrApplicationTests.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

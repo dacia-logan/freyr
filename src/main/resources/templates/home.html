@@ -17,32 +17,11 @@
             <p th:text="${loggedinuser.userName}"></p>
         </div>
 
-</div>
-<div>
-    <h2>Search:</h2>
-    <button>
-        <a href="/search">Search by title and type</a>
-    </button>
-    <button>
-        <a href="/ingredientSearch">Search by ingredients</a>
-    </button>
-</div>
-<div>
-    <h2>Manage account</h2>
-    <button>
-        <a href="/signup">Sign up</a>
-    </button>
-    <button>
-        <a href="/login">Log in</a>
-    </button>
-    <button>
-        <a href="/profile">Profile</a>
-    </button>
-</div>
 
 
     </div>
     <div class="takkar">
+        <h2>Manage account</h2>
         <button class="button" style="vertical-align:middle">
             <a href="/signup"><span>Sign Up</span></a>
         </button>
@@ -50,13 +29,16 @@
             <a href="/login"><span>Login</span></a>
         </button>
         <button class="button" style="vertical-align:middle">
-            <a href="/profile"><span>Users</span></a>
+            <a href="/profile"><span>Profile</span></a>
+        </button>
+    </div>
+    <div>
+        <h2>Search:</h2>
+        <button class="button" style="vertical-align:middle">
+            <a href="/search"><span>Search by title</span></a>
         </button>
         <button class="button" style="vertical-align:middle">
-            <a href="/search"><span>Search</span></a>
-        </button>
-        <button class="button" style="vertical-align:middle">
-            <a href="/ingredientSearch"><span>Favorites</span></a>
+            <a href="/ingredientSearch">Search by ingredients</a>
         </button>
     </div>
 
