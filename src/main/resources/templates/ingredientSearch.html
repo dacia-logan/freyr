@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <html xmlns:th="https://thymeleaf.org">
+<link rel="stylesheet" href="https://notendur.hi.is/~hfg7/freyr2/src/main/resources/templates/homeStyle.css">
 <head>
     <meta charset="UTF-8">
     <title>Freyr</title>
-    <style>
-        #title{
-            font-size: 15;
-            font-weight: bold;
-        }
-    </style>
+
 
 </head>
 <body>
 <h1>Freyr</h1>
 
-<div>
-    <button>
-        <a href="/">Home</a>
+<div class="takkar">
+    <button class="button">
+        <a href="/"><span>Home</span></a>
     </button>
 </div>
 
 <h2>Search by ingredients</h2>
 <form action="#" th:action="@{/ingredientSearch}"  method="post">
-    <div>
+    <div class="ingrd">
         <h3>Vegetables</h3>
         <div>
             <input type="checkbox" name="vegetables" th:text="${veget} " th:value="${veget}" th:each="veget : ${vegetables}"/>
@@ -60,7 +56,7 @@
     </div>
 
         <div>
-            <input type="submit" value="IngredientSearch"/>
+            <input class="button" type="submit" value="IngredientSearch"/>
         </div>
 
 

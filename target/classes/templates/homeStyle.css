@@ -17,7 +17,7 @@ form{
     text-align: center;
 }
 body{
-    background-image: url("BackgroundGreen.jpg");
+    background-image: url("darkg.jpg");
 }
 
 div.takkar{
@@ -80,4 +80,76 @@ div.myndir:hover {
 div.myndir img {
     width: 100%;
     height: auto;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+
+p.para {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+div.ingrd{
+    margin-right: 20%;
+    margin-left: 20%;
+}
+input.button{
+    width: 350px;
+}
+input.noBorders{
+     width: 499px;
+    color: black;
+    border-radius: 20px;
+    background: #d5eaf8d4;
+ }
+input.noBorders1{
+    width: 30px;
+    color: black;
+    border-radius: 20px;
+    background: #d5eaf8d4;
+}
+input.noBorders2{
+    width: 30px;
+    color: black;
+    border-radius: 20px;
+    background: #d5eaf8d4;
+}
+
+form.upp{
+    background: #FFFFFF;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 7%;
+    box-shadow:10px 10px 5px #000000;
+}
+
+div.upps{
+    color: black;
+    text-align: center;
+}
+
+input#title.noBorders{
+    text-align: center;
+    padding-top: 2%;
+}
+
+label.hae{
+    margin-right: 105px;
+}
+
+p.svart{
+    color: black;
+}
+
+li{
+    list-style-type: none;
+    color: black;
+}
+ul{
+    list-style-type: none
 }
