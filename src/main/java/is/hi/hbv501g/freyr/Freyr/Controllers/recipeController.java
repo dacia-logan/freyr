@@ -184,17 +184,12 @@ public class recipeController {
             }
 
             if (index != null) {
-                if(Integer.parseInt(index) == 0){
-                    System.out.println("Engar viðurstöður");
+                recServ.setSelectedRecipe(Integer.parseInt(index));
+                if (recServ.getSelectedRecipe().getFullInfo() == false ) {
+                    recServ.getDetails(recServ.getSelectedRecipe());
+                    recServ.getSelectedRecipe().setFullInfo();
                 }
-                else{
-                    recServ.setSelectedRecipe(Integer.parseInt(index));
-                    if (recServ.getSelectedRecipe().getFullInfo() == false ) {
-                        recServ.getDetails(recServ.getSelectedRecipe());
-                        recServ.getSelectedRecipe().setFullInfo();
-                    }
-                    return "redirect:/recipe";
-                }
+                return "redirect:/recipe";
             }
         }
 
@@ -224,17 +219,12 @@ public class recipeController {
         }
 
         if (index != null) {
-            if(Integer.parseInt(index) == 0){
-                System.out.println("Engar viðurstöður");
+            recServ.setSelectedRecipe(Integer.parseInt(index));
+            if (recServ.getSelectedRecipe().getFullInfo() == false ) {
+                recServ.getDetails(recServ.getSelectedRecipe());
+                recServ.getSelectedRecipe().setFullInfo();
             }
-            else{
-                recServ.setSelectedRecipe(Integer.parseInt(index));
-                if (recServ.getSelectedRecipe().getFullInfo() == false ) {
-                    recServ.getDetails(recServ.getSelectedRecipe());
-                    recServ.getSelectedRecipe().setFullInfo();
-                }
-                return "redirect:/recipe";
-            }
+            return "redirect:/recipe";
         }
 
         return "search";
