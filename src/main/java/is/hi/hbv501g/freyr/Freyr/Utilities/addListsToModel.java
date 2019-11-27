@@ -33,7 +33,7 @@ public class addListsToModel {
         seafoodAndFishList.addAll(seafoodListTemp);
         model.addAttribute("seafoodAndFish", seafoodAndFishList);
 
-        List<String> nutsListTemp = Arrays.asList("almond", "almond meal", "almond paste", "cashew", "chestnut", "flax", "hazelnut", "macadamia", "macaroon", "peanut", "peanut butter", "pecan", "pine nut", "pistachio", "praline", "walnut" );
+        List<String> nutsListTemp = Arrays.asList("almond", "cashew", "chestnut", "flax", "hazelnut", "macadamia", "macaroon", "peanut", "pecan", "pine nut", "pistachio", "praline", "walnut" );
         ArrayList<String> nutsList = new ArrayList<String>();
         nutsList.addAll(nutsListTemp);
         model.addAttribute("nuts", nutsList);

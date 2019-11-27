@@ -67,7 +67,6 @@
     <div th:switch="${recipes}">
         <h1>Recipes</h1>
         <h2 th:case="null">No results!</h2>
-        <h2 th:case="recipes.length == 0">No match!</h2>
         <div th:case="*">
             <table>
                 <thead>
