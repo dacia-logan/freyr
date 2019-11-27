@@ -3,29 +3,27 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Freyr</title>
-    <style>
-        #title{
-            font-size: 15;
-            font-weight: bold;
-        }
-    </style>
-
+    <link rel="stylesheet" href="homeStyle.css">
 </head>
 <body>
 <h1>Freyr</h1>
 
-<div>
-    <button>
-        <a href="/">Home</a>
+<div class="takkar">
+    <button class="button">
+        <a href="/"><span>Home</span></a>
     </button>
 </div>
 
 <h2>Search for recipies</h2>
-<form action="#" th:action="@{/search}"  method="post">
+<form class="form" action="#" th:action="@{/search}"  method="post">
     <input type="text" name="foodType" id="foodType" th:value="${foodType}"/>
+
+    <input class="button" type="submit" value="Search"/>
+
     <h3>Choose kind:</h3>
     <div th:each="mealK:${mealKinds}">
         <input type="radio" name="mealKinds" th:value="${mealK}"/>
+
         <label th:text="${mealK}"></label>
     </div>
     <input type="submit" value="Search"/>
@@ -33,6 +31,7 @@
     <div th:switch="${recipes}">
         <h1>Recipes</h1>
         <h2 th:case="null">No results!</h2>
+        <h2 th:case="0">No results found</h2>
         <div th:case="*">
             <table>
                 <thead>
