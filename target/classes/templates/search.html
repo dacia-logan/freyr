@@ -20,13 +20,6 @@
 
     <input class="button" type="submit" value="Search"/>
 
-<<<<<<< HEAD
-    <h3>Coose to increase accuracy:</h3>
-    <ul th:each="mealK : ${mealKinds}">
-        <input type="checkbox" th:field="*{mealKinds}" th:value="${mealK}" />
-
-=======
->>>>>>> d91bcffb69fc412ccb3ac376aee074701aaafa6d
     <h3>Choose kind:</h3>
     <div th:each="mealK:${mealKinds}">
         <input type="radio" name="mealKinds" th:value="${mealK}"/>
@@ -38,7 +31,6 @@
     <div th:switch="${recipes}">
         <h1>Recipes</h1>
         <h2 th:case="null">No results!</h2>
-        <h2 th:case="0">No results found</h2>
         <div th:case="*">
             <table>
                 <thead>
