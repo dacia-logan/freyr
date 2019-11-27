@@ -158,7 +158,7 @@ public class userController {
             model.addAttribute("recipes", recipes);
         }
 
-        return "/profile";
+        return "profile";
     }
 
     @RequestMapping(value="/profile", method=RequestMethod.POST)
@@ -184,11 +184,11 @@ public class userController {
                 model.addAttribute("recipes", recipes);
                 model.addAttribute("loggedinuser", sessionUser);
                 userService.save(sessionUser);
-                return "/profile";
+                return "profile";
 
         }
 
-        return "/recipe";
+        return "recipe";
     }
 
 
@@ -208,7 +208,7 @@ public class userController {
         if(!pw.equals(sessionUser.getPassword())){
             String message = alertsToUser.wrongPassword();
             model.addAttribute("message", message);
-            return "/settings";
+            return "settings";
         }else{
             sessionUser.setPassword(npw);
             userService.save(sessionUser);
