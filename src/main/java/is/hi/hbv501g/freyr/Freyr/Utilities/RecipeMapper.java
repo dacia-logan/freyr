@@ -14,7 +14,7 @@ public class RecipeMapper {
 
     private String baseUri = "https://spoonacular.com/recipeImages/";
     private String ingrURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=30&ranking=1&ignorePantry=false&ingredients=";
-    private String titleURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=30&offset=0&type=main%20course&query=";
+    private String titleURL[] = {"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=30&offset=0&type=", "&query="};
     private String infoURL[] = {"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/", "/information"};
 
     // Fa lista af uppskriftum eftir hráefnum
@@ -58,9 +58,10 @@ public class RecipeMapper {
     public ArrayList<Recipe> getResultsTitleType(String title, String type) throws UnirestException {
         System.out.println(type);
         title = title.replaceAll("[ ]", "%20");
+        type = type.replaceAll("[ ]","%20");
         System.out.println(title);
 
-        String response = this.request(this.titleURL+title);
+        String response = this.request(this.titleURL[0]+type+this.titleURL[1]+title);
 
         System.out.println(response);
 
