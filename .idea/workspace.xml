@@ -22,6 +22,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/homeStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/homeStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ingredientSearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ingredientSearch.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/recipe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/settings.html" afterDir="false" />

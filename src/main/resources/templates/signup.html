@@ -29,7 +29,7 @@
         <input type="text" name="password" id="password" th:value="*{password}"/><br>
         Email: <br>
         <input type="text" name="email" id="email" th:value="*{email}"/><br>
-        
+
         <div th:switch="${message}">
             <p class="alert" th:case="*" th:text="${message}"></p>
         </div>
