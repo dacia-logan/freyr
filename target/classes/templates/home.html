@@ -2,19 +2,35 @@
 <html xmlns:th="https://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="homeStyle.css">
     <title>Freyr</title>
 </head>
-<style>
-    p {
-        width: 60%;
-    }
-
-    #log{
-        font-weight: bold;
-    }
-</style>
 <body>
 <h1>Freyr</h1>
+    <div class="takkar">
+        <button class="button" style="vertical-align:middle">
+            <a href="/signup"><span>Sign Up</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/login"><span>Login</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/user"><span>Users</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/loggedin"><span>Profile</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/search"><span>Search</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/recipe"><span>Recipe</span></a>
+        </button>
+        <button class="button" style="vertical-align:middle">
+            <a href="/favoriteRecipes"><span>Favorites</span></a>
+        </button>
+    </div>
+
 <div th:switch="${loggedinuser}">
 
     <h3 th:case="null"></h3>
@@ -59,5 +75,51 @@ Our team came up with this idea at out ﬁrst meeting. We thought of a couple of
     </button>
 </form>
 
+
+    <div class="myndir">
+        <a target="_blank" href="pastarettur.jpg">
+            <img src="pastarettur.jpg" alt="Mountains" width="800" height="1200">
+        </a>
+    </div>
+
+    <div class="myndir">
+        <a target="_blank" href="Lobster-Tails-with-Garlic-Lemon-Butter-3.jpg">
+            <img src="Lobster-Tails-with-Garlic-Lemon-Butter-3.jpg" alt="Mountains" width="1200" height="1800">
+        </a>
+    </div>
+    <div class="myndir">
+        <a target="_blank" href="Chinese-style-Pumpkin-Omelette-8.jpg">
+            <img src="Chinese-style-Pumpkin-Omelette-8.jpg" alt="Mountains" width="680" height="1020">
+        </a>
+    </div>
+    <div class="myndir">
+        <a target="_blank" href="indian.jpeg">
+            <img src="indian.jpeg" alt="Mountains" width="800" height="1200">
+        </a>
+    </div>
+
+    <div class="myndir">
+        <a target="_blank" href="pizza.jpg">
+            <img src="pizza.jpg" alt="Mountains" width="1000" height="1500">
+        </a>
+    </div>
+
+
+    <div class="myndir">
+        <a target="_blank" href="lasagnef.jpg">
+            <img src="lasagnef.jpg" alt="Mountains" width="1900" height="2850">
+        </a>
+    </div>
+    <div class="myndir">
+        <a target="_blank" href="kjulli.jpg">
+            <img src="kjulli.jpg" alt="Mountains" width="1400" height="2097">
+        </a>
+    </div>
+
+    <div class="myndir">
+        <a target="_blank" href="holt.jpg">
+            <img src="holt.jpg" alt="Mountains" width="700" height="1050">
+        </a>
+    </div>
 </body>
 </html>
