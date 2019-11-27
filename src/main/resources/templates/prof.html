@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html xmlns:th="https://thymeleaf.org">
+<head>
     <meta charset="UTF-8">
     <title>User Profile</title>
     <style>
         #title{
-            font-size: 15;
             font-weight: bold;
         }
     </style>
@@ -52,7 +53,7 @@
             <tbody>
             <tr th:each="recipe : ${recipes}">
                 <td id = "title" th:text="${recipe.title}"></td>
-                <td><img th:src="${recipe.image}", width="300px" height="300px"></td>
+                <td><img th:src="${recipe.image}" width="300px" height="300px"></td>
                 <td>
 
                    <button  name="id" id ="id" th:value="${recipe.id}"/>Look At Recipe</button>
