@@ -179,7 +179,13 @@ public class recipeController {
                 if(combinedIngredients.equals(recServ.getSearch())){
                     model.addAttribute("recipes",recServ.getListInUse());
                 }else{
-                    model.addAttribute("recipes", recServ.getResultsIngredients(combinedIngredients));
+                    ArrayList resultList = recServ.getResultsIngredients(combinedIngredients);
+                    System.out.println("resList: " +resultList);
+                    if(resultList.size() > 0){
+                        model.addAttribute("recipes", resultList);
+                    } else{
+                        model.addAttribute("recipes", "-1");
+                    }
                 }
             }
 
@@ -210,9 +216,14 @@ public class recipeController {
         addListsToModel.mealKindsToModel(model);
 
         if (foodType.length() > 0) {
-
-                model.addAttribute("recipes", recServ.getResultsSimple(foodType, mealKind));
-
+            ArrayList resultList = recServ.getResultsSimple(foodType, mealKind);
+            if(resultList.size() > 0){
+                model.addAttribute("recipes", resultList);
+            }
+            else{
+                System.out.println("innnnnnfrkhwergewr");
+                model.addAttribute("recipes", "-1");
+            }
             recServ.setSearch(foodType);
         }
 
