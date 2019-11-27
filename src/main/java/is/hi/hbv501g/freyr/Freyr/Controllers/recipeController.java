@@ -63,7 +63,7 @@ public class recipeController {
         // setup the recipe for html
         model.addAttribute("recipe", clickedRecipe);
 
-        return "/recipe";
+        return "recipe";
     }
 
     // shows in detail the recipe that was clicked
@@ -210,11 +210,9 @@ public class recipeController {
         addListsToModel.mealKindsToModel(model);
 
         if (foodType.length() > 0) {
-            if(foodType.equals(recServ.getSearch())){
-                model.addAttribute("recipes",recServ.getListInUse());
-            }else{
+
                 model.addAttribute("recipes", recServ.getResultsSimple(foodType, mealKind));
-            }
+
             recServ.setSearch(foodType);
         }
 

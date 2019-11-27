@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public class RecipeMapper {
 
     private String baseUri = "https://spoonacular.com/recipeImages/";
-    private String ingrURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=";
+    private String ingrURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=30&ranking=1&ignorePantry=false&ingredients=";
     private String titleURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=30&offset=0&type=main%20course&query=";
     private String infoURL[] = {"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/", "/information"};
 
