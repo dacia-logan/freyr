@@ -27,12 +27,15 @@ public class RecipeMapper {
         else {
             for (int i = 0; i < ingr.size(); i++) {
                 if (i == ingr.size()-1){
-                    ingredients+=ingr.get(i);
+                    String ingredient = ingr.get(i);
+                    ingredient = ingredient.replaceAll("[ ]", "%20");
+                    ingredients+=ingredient;
                 }
                 else {
                     String ingredient = ingr.get(i);
                     ingredient = ingredient.replaceAll("[ ]", "%20");
-                    ingredients += ingr.get(i) + ",";
+                    System.out.println(ingredient);
+                    ingredients += ingredient + ",";
                 }
             }
         }
