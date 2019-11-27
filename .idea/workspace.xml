@@ -2,58 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31781dd9-ef25-4a42-b9f8-8c39c82b0ec4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.ejb.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.jms.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.persistence.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.resource.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.transaction.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/settings.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/addListsToModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/ingredientSearch.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/Freyr.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/addListsToModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/ingredientSearch.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/userController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/RecipeServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/Implementations/RecipeServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/AlertsToUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/AlertsToUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/lasagne.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/recipe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Controllers/userController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/FreyrApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/FreyrApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Repositories/RecipeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Repositories/RecipeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Repositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/Implementations/RecipeServiceImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/Implementations/RecipeServiceImplementation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/Implementations/UserServiceImplementation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/RecipeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/AlertsToUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/AlertsToUser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/is/hi/hbv501g/freyr/Freyr/Utilities/RecipeMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/recipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/lasagne.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/is/hi/hbv501g/freyr/Freyr/FreyrApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/is/hi/hbv501g/freyr/Freyr/FreyrApplicationTests.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,20 +46,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5185">
-              <caret line="305" column="72" selection-start-line="305" selection-start-column="72" selection-end-line="305" selection-end-column="72" />
+            <state relative-caret-position="629">
+              <caret line="37" column="23" lean-forward="true" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/settings.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+            <state relative-caret-position="646">
+              <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -120,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="714">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
@@ -137,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/userController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2329">
+            <state relative-caret-position="2584">
               <caret line="152" column="97" selection-start-line="152" selection-start-column="97" selection-end-line="152" selection-end-column="97" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -187,9 +153,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="624" />
-    <option name="height" value="678" />
+    <option name="x" value="-8" />
+    <option name="width" value="625" />
+    <option name="height" value="679" />
   </component>
   <component name="ProjectId" id="1U4Q5ixO29sSIk8Ov6HBWTiKa9j" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -200,9 +166,110 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Freyr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="Entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="Repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="Utilities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freyr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freyr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,7 +280,6 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574673556624" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -247,15 +313,16 @@
       <option name="presentableId" value="Default" />
       <updated>1574613205162</updated>
       <workItem from="1574613206447" duration="27752000" />
-      <workItem from="1574715436287" duration="595000" />
+      <workItem from="1574700761947" duration="1775000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="947000" />
+    <option name="totallyTimeSpent" value="273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -263,7 +330,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.2140575" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.21618743" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49946696" weight="0.32799146" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50053304" side_tool="true" weight="0.23151125" />
@@ -308,6 +375,7 @@
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
               </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -329,84 +397,17 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/recipeController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/settings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6858#6859#0" expanded="true" />
-            <element signature="e#6889#6890#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="646">
+          <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5185">
-          <caret line="305" column="72" selection-start-line="305" selection-start-column="72" selection-end-line="305" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Utilities/AlertsToUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/recipe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/favoriteRecipes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Controllers/userController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
-          <caret line="152" column="97" selection-start-line="152" selection-start-column="97" selection-end-line="152" selection-end-column="97" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/is/hi/hbv501g/freyr/Freyr/Entities/Recipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding>
-            <element signature="method#Recipe#1;class#Recipe#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+        <state relative-caret-position="629">
+          <caret line="37" column="23" lean-forward="true" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
         </state>
       </provider>
     </entry>
