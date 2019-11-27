@@ -50,7 +50,7 @@ public class RecipeMapper {
         System.out.println("MAPPER"+response);
 
         ArrayList<Recipe> recipes = this.resultsToRecipe("{results :"+response+"}");
-        System.out.println(recipes.get(0).toString());
+        //System.out.println(recipes.get(0).toString());
         return recipes;
     }
 
@@ -65,7 +65,7 @@ public class RecipeMapper {
         System.out.println(response);
 
         ArrayList<Recipe> recipes = this.resultsToRecipe(response);
-        System.out.println(recipes.get(0).toString());
+        System.out.println(recipes);
         return recipes;
     }
 

@@ -67,6 +67,7 @@
     <div th:switch="${recipes}">
         <h1>Recipes</h1>
         <h2 th:case="null">No results!</h2>
+        <h2 th:case="-1">No results found, try again</h2>
         <div th:case="*">
             <table>
                 <thead>

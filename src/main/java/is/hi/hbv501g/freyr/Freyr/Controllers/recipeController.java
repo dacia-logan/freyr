@@ -19,6 +19,7 @@ import is.hi.hbv501g.freyr.Freyr.Utilities.AlertsToUser;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -179,7 +180,13 @@ public class recipeController {
                 if(combinedIngredients.equals(recServ.getSearch())){
                     model.addAttribute("recipes",recServ.getListInUse());
                 }else{
-                    model.addAttribute("recipes", recServ.getResultsIngredients(combinedIngredients));
+                    ArrayList resultList = recServ.getResultsIngredients(combinedIngredients);
+                    if(resultList.size() > 0){
+                        model.addAttribute("recipes", resultList);
+                    }
+                    else{
+                        model.addAttribute("recipes", "-1");
+                    }
                 }
             }
 
@@ -218,23 +225,24 @@ public class recipeController {
             if(foodType.equals(recServ.getSearch())){
                 model.addAttribute("recipes",recServ.getListInUse());
             }else{
-                model.addAttribute("recipes", recServ.getResultsSimple(foodType, mealKind));
+                ArrayList resultList = recServ.getResultsSimple(foodType, mealKind);
+                if(resultList.size() > 0){
+                    model.addAttribute("recipes", resultList);
+                }
+                else{
+                    model.addAttribute("recipes", "-1");
+                }
             }
             recServ.setSearch(foodType);
         }
 
         if (index != null) {
-            if(Integer.parseInt(index) == 0){
-                System.out.println("Engar viðurstöður");
-            }
-            else{
                 recServ.setSelectedRecipe(Integer.parseInt(index));
                 if (recServ.getSelectedRecipe().getFullInfo() == false ) {
                     recServ.getDetails(recServ.getSelectedRecipe());
                     recServ.getSelectedRecipe().setFullInfo();
                 }
                 return "redirect:/recipe";
-            }
         }
 
         return "search";

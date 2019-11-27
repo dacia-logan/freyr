@@ -17,9 +17,6 @@
 <h2>Search for recipies</h2>
 <form class="form" action="#" th:action="@{/search}"  method="post">
     <input type="text" name="foodType" id="foodType" th:value="${foodType}"/>
-
-    <input class="button" type="submit" value="Search"/>
-
     <h3>Choose kind:</h3>
     <div th:each="mealK:${mealKinds}">
         <input type="radio" name="mealKinds" th:value="${mealK}"/>
@@ -31,7 +28,7 @@
     <div th:switch="${recipes}">
         <h1>Recipes</h1>
         <h2 th:case="null">No results!</h2>
-        <h2 th:case="0">No results found</h2>
+        <h2 th:case="-1">No results found, try again</h2>
         <div th:case="*">
             <table>
                 <thead>
