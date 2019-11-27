@@ -210,11 +210,11 @@ public class recipeController {
         addListsToModel.mealKindsToModel(model);
 
         if (foodType.length() > 0) {
-            if(foodType.equals(recServ.getSearch())){
-                model.addAttribute("recipes",recServ.getListInUse());
-            }else{
+            //if(foodType.equals(recServ.getSearch())){
+              //  model.addAttribute("recipes",recServ.getListInUse());
+            //}else{
                 model.addAttribute("recipes", recServ.getResultsSimple(foodType, mealKind));
-            }
+            //}
             recServ.setSearch(foodType);
         }
 
