@@ -101,7 +101,6 @@ public class recipeController {
                 session.setAttribute("LoggedInUser", sessionUser);                      // update user favorites in session
             }
 
-
             Recipe exists = recServ.findById(recipe.getId());
             if (exists == null) {                                                       // if recipe does not exist in recipe database
                 recipe = recServ.save(recipe);                                          // add recipe to recipe database
@@ -114,7 +113,6 @@ public class recipeController {
         return "redirect:/recipe";
     }
 
-    // todo taka út þegar recipes hlutir eru klárir í slaginn
     // býr til gerfi recipe hlut
     public Recipe createFakeRecipe(){
         Recipe clickedRecipe = new Recipe();
@@ -130,7 +128,6 @@ public class recipeController {
         return clickedRecipe;
     }
 
-    // todo remove this method
     // sets up and shows all favorite recipes of the user
     // if there are no favorite recipes the page will say so
     @RequestMapping(value="/favoriteRecipes", method=RequestMethod.GET)
@@ -177,10 +174,7 @@ public class recipeController {
         if(nuts != null) combinedIngredients.addAll(Arrays.asList(nuts));
         if(grainsAndBaking != null) combinedIngredients.addAll(Arrays.asList(grainsAndBaking));
 
-        System.out.println(combinedIngredients);
-
         if(combinedIngredients != null){
-            recServ.getResultsIngredients(combinedIngredients);
             if (combinedIngredients.size() > 0) {
                 if(combinedIngredients.equals(recServ.getSearch())){
                     model.addAttribute("recipes",recServ.getListInUse());
@@ -190,13 +184,11 @@ public class recipeController {
             }
 
             if (index != null) {
-                System.out.println(index);
                 recServ.setSelectedRecipe(Integer.parseInt(index));
                 if (recServ.getSelectedRecipe().getFullInfo() == false ) {
                     recServ.getDetails(recServ.getSelectedRecipe());
                     recServ.getSelectedRecipe().setFullInfo();
                 }
-                System.out.println(recServ.getSelectedRecipe().toString());
                 return "redirect:/recipe";
             }
         }
@@ -214,10 +206,7 @@ public class recipeController {
     public String search(@RequestParam(required = false, value = "index") String
                                      index, @RequestParam(required = false, value = "foodType") String foodType, @RequestParam(name = "mealKinds", required = false) String mealKind, Model model) throws
             UnirestException {
-        //todo Tekur við því sem notandinn slær inn og sendir það á mapperinn
-        //todo Hægt að commenta þetta út á þá má sjá uppskriftina prenntast út á skipanalínu
 
-        recServ.getResultsSimple(foodType, mealKind);
         addListsToModel.mealKindsToModel(model);
 
         if (foodType.length() > 0) {
@@ -230,35 +219,14 @@ public class recipeController {
         }
 
         if (index != null) {
-            System.out.println(index);
             recServ.setSelectedRecipe(Integer.parseInt(index));
             if (recServ.getSelectedRecipe().getFullInfo() == false ) {
                 recServ.getDetails(recServ.getSelectedRecipe());
                 recServ.getSelectedRecipe().setFullInfo();
             }
-            System.out.println(recServ.getSelectedRecipe().toString());
             return "redirect:/recipe";
         }
 
         return "search";
     }
-
-
-    /*
-    Þurfum svo annan controller fyrir að velja ingredients síðar
-        RecipeMapper a = new RecipeMapper();
-        ArrayList<String> s = new ArrayList<>();
-        s.add("egg");
-        s.add("milk");
-        Recipe rec = new Recipe();
-        rec.setId(156992);
-        a.getResultsTitle("burger");
-    @RequestMapping
-
-     */
-
-
-    
-
-
 }
