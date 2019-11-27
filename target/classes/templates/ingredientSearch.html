@@ -52,10 +52,6 @@
         <div>
             <input type="checkbox" name="grainsAndBaking" th:text="${grain} " th:value="${grain}" th:each="grain : ${grainsAndBaking}"/>
         </div>
-        <h3>Oils</h3>
-        <div>
-            <input type="checkbox" name="oils" th:text="${oil} " th:value="${oil}" th:each="oil : ${oils}"/>
-        </div>
         <h3>Sweets</h3>
         <div>
             <input type="checkbox" name="sweets" th:text="${sweet} " th:value="${sweet}" th:each="sweet : ${sweets}"/>
@@ -71,6 +67,7 @@
     <div th:switch="${recipes}">
         <h1>Recipes</h1>
         <h2 th:case="null">No results!</h2>
+        <h2 th:case="recipes.length == 0">No match!</h2>
         <div th:case="*">
             <table>
                 <thead>
