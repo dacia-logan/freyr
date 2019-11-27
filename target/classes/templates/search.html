@@ -18,8 +18,6 @@
 <form class="form" action="#" th:action="@{/search}"  method="post">
     <input type="text" name="foodType" id="foodType" th:value="${foodType}"/>
 
-    <input class="button" type="submit" value="Search"/>
-
     <h3>Choose kind:</h3>
     <div th:each="mealK:${mealKinds}">
         <input type="radio" name="mealKinds" th:value="${mealK}"/>
