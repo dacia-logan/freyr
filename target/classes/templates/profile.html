@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <style>
+        #title{
+            font-size: 15;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>User Profile</h1>
+
+<div>
+    <button>
+        <a href="/">Home</a>
+    </button>
+</div>
+<form action="#" th:action="@{/profile}"   method="post">
+<div th:switch="${loggedinuser}">
+
+    <h3 th:case="null">You are not logged in!</h3>
+    <div th:case="*">
+        <h3>User name: </h3>
+        <p th:text="${loggedinuser.userName}"></p>
+        <button>
+            <a href="/settings">Change Password</a>
+        </button>
+
+        <h3>Email: </h3>
+        <p th:text="${loggedinuser.email}"></p>
+    </div>
+
+</div>
+
+
+
+<div th:switch="${recipes}">
+
+    <h3 th:case="null">No favorite recipes yet!</h3>
+    <div th:case="*">
+        <h3>Favorite Recipes</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="recipe : ${recipes}">
+                <td id = "title" th:text="${recipe.title}"></td>
+                <td><img th:src="${recipe.image}", width="300px" height="300px"></td>
+                <td>
+
+                   <button  name="id" id ="id" th:value="${recipe.id}"/>Look At Recipe</button>
+
+                </td>
+                <td>
+
+                    <button  name="delete" id ="delete" th:value="${recipe.id}"/>Remove From Favorites</button>
+
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</form>
+</body>
+</html>

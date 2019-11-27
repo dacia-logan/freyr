@@ -38,20 +38,15 @@
                 <thead>
                 <tr>
                     <th>Title</th>
-                    <!-- <th>favorites</th>-->
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="recipe : ${recipes}">
                     <td id="title" th:text="${recipe.title}"></td>
-                    <td><img th:src="${recipe.image}", width="300px" height="300px"></td>
+                    <td><img th:src="${recipe.image}" width="300px" height="300px"></td>
                     <td>
-                        <button  name="index" id ="index" th:value="${recipe.index}"/><!--<a href="/recipe">-->Look At Recipe</button><!--</a>-->
+                        <button  name="index" id ="index" th:value="${recipe.index}"/>Look At Recipe</button>
                     </td>
-                    <!--<button><a href="/recipe" value = "${recipe.index}">Skoða</a></button></td>-->
-                    <!--   <button>
-                           <a href="/recipe">Recipe</a>
-                       </button> -->
                 </tr>
                 </tbody>
             </table>
