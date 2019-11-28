@@ -22,7 +22,7 @@
 <h2>Please fill in this form to create an account</h2>
 
 <div class="form">
-    <form action="#" th:action="@{/signup}" th:object="${user}" method="post">
+    <form class="upp" action="#" th:action="@{/signup}" th:object="${user}" method="post">
         User Name: <br>
         <input type="text" name="userName" id="userName" th:field="*{userName}"/><br>
         Password: <br>
